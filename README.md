@@ -43,6 +43,6 @@ The four-day 10-minute repeated-exposure example is explicitly a lab-adapted tem
 
 Open `index.html` in a browser or serve this folder with any static server. The data are loaded as a script rather than fetched, so a basic file-based preview works. Clipboard access depends on the browser; export and download alternatives remain available.
 
-## Alcohol handbook (edition 0.2)
+## Intelligence Genetics Lab (alcohol handbook, edition 0.2)
 
 Open `alcohol.html` for 23 detailed alcohol modules and a comparison/clock/figure map. The 2025 Larnerd paper anchors the acute, 4 h/24 h rapid, AST/ART cold-shock, 48 h chronic and circuit-phase methods. Published repeated-bout and intake/reward/kinetic methods are distinct from local lab templates. Each long-form page identifies source boundaries, rationale, groups, parameters, numbered steps, controls, calculations, proposed modifications, QC and troubleshooting. Missing source details are stated rather than invented. Blank CSV/Markdown worksheets are under `assets/templates/`. Markdown export includes all these sections and the visitor’s local notes.
