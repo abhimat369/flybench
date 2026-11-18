@@ -46,3 +46,7 @@ Open `index.html` in a browser or serve this folder with any static server. The 
 ## Intelligence Genetics Lab (alcohol handbook, edition 0.2)
 
 Open `alcohol.html` for 23 detailed alcohol modules and a comparison/clock/figure map. The 2025 Larnerd paper anchors the acute, 4 h/24 h rapid, AST/ART cold-shock, 48 h chronic and circuit-phase methods. Published repeated-bout and intake/reward/kinetic methods are distinct from local lab templates. Each long-form page identifies source boundaries, rationale, groups, parameters, numbered steps, controls, calculations, proposed modifications, QC and troubleshooting. Missing source details are stated rather than invented. Blank CSV/Markdown worksheets are under `assets/templates/`. Markdown export includes all these sections and the visitor’s local notes.
+
+## Edit the curator profile
+
+The “Meet the curator” profile is in `about.html`, inside `<section class="curator-profile" id="curator">`. Edit the name in `curator-name`, the affiliation in `curator-affiliation` and the paragraph in `curator-bio`. The homepage credit is in `index.html`, inside `<a class="curator-credit">`. Appearance is controlled by the curator rules at the end of `assets/styles.css`. On GitHub, open the file, choose the pencil icon, change the text while keeping the surrounding HTML tags, and commit to `main` to trigger Pages deployment.
