@@ -1,6 +1,6 @@
 window.FLYBENCH_DATA = {
-  "version": "0.1",
-  "checked": "2026-11-17",
+  "version": "0.2",
+  "checked": "2026-11-18",
   "categories": [
     {
       "id": "care",
@@ -13,6 +13,12 @@ window.FLYBENCH_DATA = {
       "name": "Genetics & crosses",
       "icon": "dna",
       "description": "Plan the cross, understand the genotype and choose controls."
+    },
+    {
+      "id": "alcohol",
+      "name": "Alcohol paradigms",
+      "icon": "activity",
+      "description": "Exposure, sensitivity, tolerance, preference, memory and circuit experiments."
     },
     {
       "id": "behavior",
@@ -207,6 +213,78 @@ window.FLYBENCH_DATA = {
       "organization": "Primary study; separate laboratory-specific axenic methods are described",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7875489/",
       "kind": "Primary paper"
+    },
+    "larnerd2025": {
+      "title": "Larnerd et al. (2025): ethanol-specific memory-like states and circuits",
+      "organization": "PLOS Genetics 21:e1011582 · doi:10.1371/journal.pgen.1011582 · supplied paper, especially pp. 3–4 and 22–23",
+      "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1011582",
+      "kind": "Primary paper · core alcohol reference"
+    },
+    "gprk2020": {
+      "title": "Kang et al. (2020): GPRK2, LoRR, FlyGrAM and ethanol absorption",
+      "organization": "Alcoholism: Clinical and Experimental Research · doi:10.1111/acer.14396",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7485117/",
+      "kind": "Primary paper · named apparatus methods"
+    },
+    "toleranceconfound": {
+      "title": "Large genetic analysis of alcohol resistance and tolerance (2023)",
+      "organization": "Primary genetic analysis · fixed-duration and response-scaled induction designs",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10592763/",
+      "kind": "Primary paper · sensitivity/tolerance design"
+    },
+    "kaun2011": {
+      "title": "Kaun et al. (2011): a Drosophila model for alcohol reward",
+      "organization": "Nature Neuroscience · doi:10.1038/nn.2805",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4249630/",
+      "kind": "Primary paper · reciprocal odor conditioning"
+    },
+    "devenini2009": {
+      "title": "Devineni & Heberlein (2009): preferential ethanol consumption",
+      "organization": "Current Biology · doi:10.1016/j.cub.2009.10.070",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2805771/",
+      "kind": "Primary paper · consumption and abstinence"
+    },
+    "pohl2012": {
+      "title": "Pohl et al. (2012): caloric contributions to ethanol preference",
+      "organization": "Alcoholism: Clinical and Experimental Research · doi:10.1111/j.1530-0277.2012.01817.x",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3414655/",
+      "kind": "Primary paper · nutritional controls"
+    },
+    "frappe2014": {
+      "title": "Peru y Colón de Portugal et al. (2014): the FRAPPÉ assay",
+      "organization": "Addiction Biology · doi:10.1111/adb.12105 · published online 2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3991769/",
+      "kind": "Primary paper · individual fluorescent intake"
+    },
+    "troutwine2016": {
+      "title": "Troutwine et al. (2016): alcohol resistance and enzymatic ethanol measurement",
+      "organization": "Genes, Brain and Behavior · doi:10.1111/gbb.12288",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4991213/",
+      "kind": "Primary paper · internal ethanol assay"
+    },
+    "withdrawal2014": {
+      "title": "Ghezzi et al. (2014): withdrawal-associated seizure susceptibility",
+      "organization": "Addiction Biology · doi:10.1111/j.1369-1600.2012.00465.x · online first 2012",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4860885/",
+      "kind": "Primary paper · specialist electrophysiology"
+    },
+    "development2011": {
+      "title": "McClure, French & Heberlein (2011): developmental ethanol exposure",
+      "organization": "Primary developmental exposure study · PMID:21303840",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3097455/",
+      "kind": "Primary paper · developmental exposure"
+    },
+    "wen2005": {
+      "title": "Wen et al. (2005): ethanol sedation recovery in flies",
+      "organization": "PNAS · doi:10.1073/pnas.0406814102",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC548536/",
+      "kind": "Primary paper · recovery endpoint"
+    },
+    "cue2018": {
+      "title": "Cue-induced ethanol seeking is dose-dependent (2018)",
+      "organization": "Frontiers in Physiology · doi:10.3389/fphys.2018.00438",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2018.00438/full",
+      "kind": "Primary paper · conditioning dose and timing"
     }
   },
   "protocols": [
@@ -965,257 +1043,677 @@ window.FLYBENCH_DATA = {
     },
     {
       "slug": "ethanol-sensitivity",
-      "title": "Measure ethanol sensitivity with defined endpoints",
-      "category": "behavior",
-      "summary": "Keep loss of righting and complete immobility as separate measurements.",
-      "time": "Pilot dependent; usually one assay session",
+      "title": "Measure ethanol sensitivity by loss of righting",
+      "summary": "A complete acute LoRR workflow, with source-defined settings and a clear stop rule.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "Preparation plus a 30 min named E1 example",
       "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
       "materials": [
-        "Age- and sex-matched flies",
-        "Validated ethanol-vapor apparatus and flow meters",
-        "Observation vials, timer and video",
-        "Humidified-air controls"
+        "Age/sex-matched experimental and genetic-control cohorts",
+        "Calibrated flowing-vapor rig, clean labeled chambers and humidified-air control",
+        "Timer or synchronized video, count sheet and blinded vial codes",
+        "Fresh recovery food and a safe, fixed end-of-exposure transfer routine"
+      ],
+      "parameters": [
+        [
+          "Published cohorts",
+          "Adult males; about 20 genetically identical flies per group is n = 1. Exact adult age is not stated in the supplied Methods."
+        ],
+        [
+          "Rearing",
+          "25°C, 60% RH, 12 h light : 12 h dark; cornmeal/molasses/yeast food. Thermogenetic crosses were raised at 18°C."
+        ],
+        [
+          "Collection recovery",
+          "At least 1 day after CO₂ collection before any behavioral paradigm."
+        ],
+        [
+          "Genetic background",
+          "At least five outcross generations to Berlin carrying w1118 or v1; w1118 Berlin was the loss-of-function control."
+        ],
+        [
+          "Named E1 setting",
+          "2025 paper: nominal 55% ethanol vapor for 30 min. Controls typically reached ST50 in 12–20 min and 75–90% LoRR by the end. These are reference outcomes, not acceptance targets forced on each genotype."
+        ],
+        [
+          "Score spacing",
+          "2025 paper: every 6 min. A 2 min schedule is a proposed local modification requiring consistent stimulation and validation."
+        ],
+        [
+          "Separate operational definition",
+          "Kang 2020: a fly remaining on its side or back for >5 s after a gentle tap counts as LoRR, in its own 1:1 vapor / 250 mL/min-vial setup."
+        ],
+        [
+          "Source exception",
+          "The 2025 paper reports rare experiments at nominal 60% and 30–35 min for very resistant groups. Any such change must also be applied to the relevant controls and analyzed as a different regimen."
+        ]
       ],
       "steps": [
         {
-          "title": "Standardize the cohorts",
-          "action": "Match age, sex, rearing density, food and handling. Test groups at the same circadian phase.",
-          "why": "These factors can alter ethanol responses."
+          "title": "Write the endpoint before loading flies",
+          "action": "State exactly how the chamber is disturbed, how long a fly has to right itself, and whether only posture or also complete movement arrest will be recorded. Use a score sheet with separate count columns.",
+          "why": "Changing the scoring rule halfway through a run changes what ST50 means.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Define the endpoint",
-          "action": "For LoRR, score failure to regain an upright posture after the source assay’s standardized stimulus. If scoring complete immobility, define its observation window separately.",
-          "why": "Posture and movement are different readouts."
+          "title": "Code and balance the cohorts",
+          "action": "Prepare the same number of adult males per vial where feasible; about 20 is the 2025 source unit. Randomize rig position and include matched controls in every session. Record actual age and denominator.",
+          "why": "The vial, not each fly within it, is the biological exposure unit.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Record the delivery settings",
-          "action": "Check total flow, alcohol-branch flow, humidified-air flow, ethanol stock concentration and temperature. Check for leaks.",
-          "why": "A bubbler-flow ratio is not a measured gas-phase ethanol percentage."
+          "title": "Inspect the baseline",
+          "action": "Before ethanol, count all flies and note animals already unable to right themselves, injured, trapped or dead. Apply only prospectively written exclusion rules.",
+          "why": "An existing locomotor defect can look like ethanol hypersensitivity.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Expose and score",
-          "action": "Record baseline, start the fixed delivery setting, then score at preset intervals. The FlyBar source describes 5 min intervals. Use the same scoring action for all vials.",
-          "why": "Consistent observation makes curves comparable."
+          "title": "Start a fixed exposure",
+          "action": "Use the chosen nominal setting and record physical dose metadata. If following the 2025 named example, E1 is 30 min at nominal 55%, subject to successful local commissioning.",
+          "why": "The external regimen must be defined independently of the observed result.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Stop by a predefined rule",
-          "action": "Use a pilot-defined maximum exposure. Do not prolong one genotype’s exposure simply to force complete sedation.",
-          "why": "Unequal exposure can change the biological question."
+          "title": "Score LoRR consistently",
+          "action": "At every scheduled time, apply the standardized disturbance and count flies meeting the righting criterion. With video, keep clips around every assessment and record the actual time.",
+          "why": "The assessment itself is a stimulus; its strength and frequency must match across groups.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Analyze each vial",
-          "action": "Plot endpoint proportion against time and estimate a separate ST50 for each biological replicate and endpoint.",
-          "why": "Pooling can hide between-vial variation."
+          "title": "Keep movement arrest separate",
+          "action": "If requested, also count complete immobility using its own prespecified observation/stimulus definition. Keep NLoRR and Nimmobile separate even when some flies meet both.",
+          "why": "Combining different stages can reverse an apparent genotype ranking.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Stop by the locked rule",
+          "action": "At the maximum exposure or a prespecified apparatus/health stop, discontinue ethanol identically for compared cohorts. Do not keep one genotype in ethanol merely to obtain 100% immobility.",
+          "why": "Unequal exposure confounds genotype, delivered dose and later recovery or tolerance.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record recovery and survival",
+          "action": "Transfer or wash out using the same method. Record time to regain normal posture and next-day survival on fresh food.",
+          "why": "Early LoRR can coexist with normal recovery or with toxicity; these outcomes need separating.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate one ST50 per vial",
+          "action": "Convert counts to the percentage meeting LoRR, identify observations spanning 50%, and interpolate only inside that bracket. Label the result ST50-LoRR.",
+          "why": "An unbracketed endpoint cannot be assigned an observed median.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Review raw curves as well as medians",
+          "action": "Compare the curve shapes and the final endpoint fractions, not only a bar chart of ST50. Check whether low baseline activity, sex or day explains a result.",
+          "why": "A single number can conceal distinct behavioral trajectories.",
+          "origin": "Editorial instruction"
         }
       ],
       "controls": [
-        "Humidified-air handling control",
-        "Background-matched genetic controls",
-        "An apparatus reference strain"
+        "Concurrent background-matched control",
+        "Air-only scoring/handling control",
+        "For GAL4/UAS: driver-only and responder-only controls as well as the experimental cross",
+        "Baseline righting and survival checks"
       ],
       "record": [
-        "Endpoint definition",
-        "Age, sex and flies per vial",
-        "All flow rates and ethanol stock %",
-        "Counts and times",
-        "Maximum exposure and recovery"
+        "N and age/sex per vial",
+        "NLoRR / Nimmobile at each actual time",
+        "Tap and righting criterion",
+        "Vapor log and cutoff",
+        "ST50-LoRR and unreached medians",
+        "Recovery and survival"
       ],
-      "expected": "A time course for one clearly defined behavior. Neither LoRR nor immobility alone demonstrates unconsciousness.",
+      "expected": "An endpoint-specific initial sensitivity curve. A smaller ST50-LoRR means earlier postural failure under the defined exposure; it does not establish unconsciousness or distinguish pharmacodynamic from pharmacokinetic effects.",
       "troubleshooting": [
         {
-          "problem": "Results reverse between scorers",
-          "action": "Compare endpoint definitions and score blinded videos together."
+          "problem": "Two scorers get opposite genotype rankings",
+          "action": "Blindly re-score the same video, distinguishing LoRR from complete immobility. Agree on the disturbance and response window before collecting a new cohort."
         },
         {
-          "problem": "Sedation is unusually slow",
-          "action": "Check leaks, flow distribution, ethanol condition and cohort handling before extending exposure."
+          "problem": "ST50 is never reached",
+          "action": "Report “not reached by the prespecified cutoff” and the final proportion. Redesign the exposure in a separate pilot rather than assigning the final time as ST50."
+        },
+        {
+          "problem": "A control strain sedates earlier on one day",
+          "action": "Inspect apparatus temperature, flows, stock, age, collection anesthesia, clock phase and channel position. Retain the day metadata."
         }
       ],
       "sources": [
+        "larnerd2025",
         "flybar",
-        "endpoints"
+        "gprk2020"
       ],
-      "kind": "Source-guided workflow",
-      "parameters": [],
       "related": [
-        "st50-analysis",
+        "ethanol-immobility",
+        "ethanol-recovery",
         "rapid-tolerance",
-        "repeated-tolerance"
+        "st50-analysis"
       ],
-      "checked": "2026-11-17"
+      "rationale": [
+        "Loss of righting measures failure to maintain or regain posture after a standardized disturbance. A fly can still move its legs or wings after losing righting. That is why LoRR and complete immobility need separate score columns.",
+        "A lower acute ST50 means the group reaches the chosen behavioral endpoint earlier under the same exposure. It does not prove unconsciousness, a particular brain mechanism, or an equal internal ethanol concentration.",
+        "The 2025 paper used E1 both to measure initial sensitivity and to induce later tolerance. If initial sensitivity alone is the question, prespecify the exposure limit; prolonged exposure adds dose and may recruit adaptation."
+      ],
+      "groups": [
+        [
+          "Genetic control + ethanol",
+          "Same background, same external exposure",
+          "Reference acute sensitivity"
+        ],
+        [
+          "Experimental genotype + ethanol",
+          "Same handling, age and apparatus settings",
+          "Test acute sensitivity"
+        ],
+        [
+          "Matched air groups",
+          "Same total flow and scoring disturbance",
+          "Baseline postural or handling defects"
+        ]
+      ],
+      "timeline": [
+        [
+          "Before day 0",
+          "Cohorts",
+          "Recover from collection anesthesia for ≥24 h in the 2025 source."
+        ],
+        [
+          "t = 0",
+          "Start E1",
+          "Begin the fixed exposure and record baseline counts."
+        ],
+        [
+          "0, 6, 12, 18, 24, 30 min",
+          "Published score grid",
+          "Use the same score action and criterion in every vial."
+        ],
+        [
+          "Prespecified cutoff",
+          "Stop and recover",
+          "Switch all compared vials by the same external-exposure rule."
+        ]
+      ],
+      "analysis": [
+        "For p1 ≤ 50 ≤ p2 with p2 > p1, ST50 = t1 + (50 − p1)(t2 − t1)/(p2 − p1). Do not extrapolate beyond the last observation.",
+        "Show replicate-level values and raw proportion curves; retain day/cross blocks in the statistical design. A time series has repeated observations of the same vial, not independent n at each time."
+      ],
+      "modifications": [
+        {
+          "change": "Use a defined adult age window, for example 3–5 days, for a new local assay.",
+          "rationale": "Age is a plausible behavioral and pharmacokinetic confound, but the 2025 Methods do not specify an exact age.",
+          "validation": "Proposed standardization, not an age claim about Larnerd 2025. Validate both induction and challenge in that window."
+        },
+        {
+          "change": "Add an air-preexposed group to the challenge where feasible.",
+          "rationale": "The E2−E1 calculation can be influenced by the initial sensitivity and by time-dependent drift.",
+          "validation": "An additional control design, not a replacement for the published paired calculation. Match age, handling and clock time."
+        },
+        {
+          "change": "Score every 2 min near the transition instead of every 6 min.",
+          "rationale": "This can improve the temporal bracket for ST50 and help compare two endpoints.",
+          "validation": "Pilot with a fixed disturbance schedule; more frequent handling may alter the phenotype. Label it an adaptation, not the 2025 published score spacing."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd (2025), pp. 3–4 and 23: LoRR is the endpoint called sedation in that paper. Kang (2020) provides a separate, explicitly defined >5 s righting example. Do not silently combine apparatus settings from these sources.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
     },
     {
       "slug": "rapid-tolerance",
-      "title": "Test rapid ethanol tolerance",
-      "category": "behavior",
-      "summary": "Compare a later challenge with a matched ethanol-naive group.",
-      "time": "Two exposures plus recovery",
+      "title": "Measure four-hour rapid ethanol tolerance",
+      "summary": "Reproduce the paired E1/E2 design and keep the start-to-start clock explicit.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "4 h between exposure starts, plus E2",
       "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
       "materials": [
-        "Matched fly cohorts",
-        "Validated sensitivity assay",
-        "Fresh recovery food",
-        "Air-preexposed control cohorts"
+        "Paired ethanol-exposed vials and genetic controls",
+        "Calibrated vapor rig and synchronized score clock",
+        "Fresh food during the inter-exposure interval",
+        "A vial-level E1/E2 linkage sheet and, where possible, separate air-preexposed controls"
+      ],
+      "parameters": [
+        [
+          "Published cohorts",
+          "Adult males; about 20 genetically identical flies per group is n = 1. Exact adult age is not stated in the supplied Methods."
+        ],
+        [
+          "Rearing",
+          "25°C, 60% RH, 12 h light : 12 h dark; cornmeal/molasses/yeast food. Thermogenetic crosses were raised at 18°C."
+        ],
+        [
+          "Collection recovery",
+          "At least 1 day after CO₂ collection before any behavioral paradigm."
+        ],
+        [
+          "Genetic background",
+          "At least five outcross generations to Berlin carrying w1118 or v1; w1118 Berlin was the loss-of-function control."
+        ],
+        [
+          "E1",
+          "Nominal 55% vapor for 30 min in the standard source example."
+        ],
+        [
+          "E2 onset",
+          "4 h after E1 onset, giving 3.5 h from E1 cessation for a 30 min E1."
+        ],
+        [
+          "E2 setting",
+          "Same ethanol concentration designation and scoring endpoint as E1. Prespecify a practical E2 cutoff."
+        ],
+        [
+          "Scoring",
+          "LoRR every 6 min in the 2025 source."
+        ],
+        [
+          "Tolerance",
+          "ΔST50 = ST50(E2) − ST50(E1), in minutes per paired vial."
+        ]
       ],
       "steps": [
         {
-          "title": "Set the induction plan",
-          "action": "Choose a fixed first exposure from a pilot, before comparing genotypes.",
-          "why": "Genotype-specific induction durations confound dose and response."
+          "title": "Select the question and the clock",
+          "action": "Write “E2 starts 4 h after E1 starts” on the run sheet if reproducing the 2025 schedule. Reserve the term recovery interval for time after E1 ends.",
+          "why": "A 30 min clock ambiguity materially changes the rest period.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Run the first exposure",
-          "action": "Give ethanol-preexposed flies the fixed induction; handle naive controls identically with humidified air.",
-          "why": "The later difference needs an exposure-history control."
+          "title": "Plan paired and additional cohorts",
+          "action": "Keep each E1 vial linked to its E2 vial. Allocate separate air-preexposed groups if using the augmented history-control design.",
+          "why": "You cannot reconstruct an E2−E1 pair from unrelated vials.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Recover consistently",
-          "action": "Use a prespecified recovery interval. A published rapid-tolerance design tests after 4 h; confirm ethanol clearance and suitability in your apparatus.",
-          "why": "Residual ethanol can contaminate the interpretation."
+          "title": "Run and score E1",
+          "action": "Use the locked induction setting and score LoRR every 6 min for the source protocol. Record the full E1 curve and acute ST50.",
+          "why": "Baseline sensitivity is part of interpreting the later delta.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Challenge together",
-          "action": "Expose pretreated and naive groups at the same delivery setting and time of day. Score the same endpoint.",
-          "why": "A matched challenge separates history from day-to-day drift."
+          "title": "End E1 consistently",
+          "action": "Stop at 30 min for the standard source example and place flies on fresh food. If a different common regimen was chosen in a prior pilot, state its duration and reset the rest calculation.",
+          "why": "Ad hoc genotype-specific extensions change induction dose.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Calculate the response",
-          "action": "Compare challenge ST50 across matched groups. Report the calculation used for absolute or percentage tolerance.",
-          "why": "Different tolerance formulas are not interchangeable."
+          "title": "Recover without new anesthesia",
+          "action": "Keep housing, food, temperature and handling matched. Inspect health and avoid a new CO₂ exposure between E1 and E2.",
+          "why": "Intervening anesthesia and food deprivation are additional manipulations.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Check alternatives",
-          "action": "Review mortality, baseline locomotion and, when needed, internal ethanol concentrations.",
-          "why": "A delayed endpoint is not automatically functional neural tolerance."
+          "title": "Check clearance in matched destructive samples",
+          "action": "For a new apparatus/genotype combination, measure residual internal ethanol at the intended challenge time in separate cohorts.",
+          "why": "A delayed behavioral response while ethanol remains is not clean evidence of post-clearance functional tolerance.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run E2 on schedule",
+          "action": "Start each vial at its planned time, use the same nominal setting, and score the same endpoint with the same stimulus. Interleave matched controls.",
+          "why": "A tolerance effect should not be a change in the assay itself.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Compute the paired delta",
+          "action": "Interpolate E1 and E2 ST50 per vial when observed, then subtract E1 from E2. Retain both raw medians alongside ΔST50.",
+          "why": "The delta can be influenced by unusually low or high E1 values.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze the exposure-history effect separately",
+          "action": "If air-preexposed groups were included, compare their challenge ST50 to preexposed challenge ST50 within genotype/day. Label any percentage formula explicitly.",
+          "why": "A between-history challenge contrast is not numerically interchangeable with the source paired delta.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Verify health and reproducibility",
+          "action": "Review baseline movement, survival and independent days before calling a change functional neural tolerance.",
+          "why": "Selective loss of susceptible flies or altered clearance can imitate resistance.",
+          "origin": "Editorial instruction"
         }
       ],
       "controls": [
-        "Air-preexposed challenge controls",
-        "Matched genetic controls",
-        "Handling and survival checks"
+        "Driver-only and UAS-only controls where relevant",
+        "Concurrent background controls",
+        "Air-preexposed E2 controls as an added design",
+        "Clearance, baseline movement and survival checks"
       ],
       "record": [
-        "Induction duration",
-        "Recovery interval",
-        "Endpoint",
-        "Challenge ST50 per vial",
-        "Tolerance formula"
+        "Linked E1/E2 vial IDs",
+        "E1 start/end; E2 start",
+        "Both LoRR curves and ST50 values",
+        "Paired ΔST50",
+        "Recovery food and temperature",
+        "Clearance evidence"
       ],
-      "expected": "A change in challenge sensitivity associated with prior ethanol exposure, interpreted alongside matched controls.",
+      "expected": "A post-exposure shift in the same LoRR endpoint at a defined four-hour clock. In the 2025 framework this can contain both AST and ART; cold-shock testing is needed to separate their operational contributions.",
       "troubleshooting": [
         {
-          "problem": "No apparent tolerance",
-          "action": "Confirm induction and recovery conditions; do not assume that every exposure produces tolerance."
+          "problem": "E2 has a much larger ST50 but E1 was extremely small",
+          "action": "Inspect baseline sensitivity, paired raw curves and the air-history contrast. A large arithmetic delta is not automatically a selective gain in plasticity."
         },
         {
-          "problem": "Higher mortality after exposure",
-          "action": "Reduce the induction in a new pilot and document exclusions prospectively."
+          "problem": "Some E2 curves never reach 50%",
+          "action": "Use the prespecified cutoff and report censoring/unreached medians. Do not fabricate an E2 value to permit subtraction."
+        },
+        {
+          "problem": "A different paper uses a 4 h rest",
+          "action": "State both onset-to-onset and cessation-to-onset times. Do not call the schedules identical."
         }
       ],
       "sources": [
-        "rapid"
+        "larnerd2025"
       ],
-      "kind": "Source-guided workflow",
-      "parameters": [],
       "related": [
-        "ethanol-sensitivity",
-        "st50-analysis"
+        "ethanol-art-24h",
+        "ethanol-cold-shock",
+        "ethanol-internal-levels",
+        "ethanol-study-design"
       ],
-      "checked": "2026-11-17"
+      "rationale": [
+        "Rapid tolerance is an acquired change after one prior ethanol episode and sufficient clearance. It is not the same as an innate resistant genotype.",
+        "At the four-hour test, the 2025 study finds both cold-sensitive and cold-resistant contributions. A four-hour ΔST50 should therefore not be labeled pure AST.",
+        "E2−E1 is the source calculation. An additional comparison to contemporaneous air-preexposed challenge groups answers a related, useful history-effect question; both should be named rather than mixed."
+      ],
+      "groups": [
+        [
+          "Published paired cohort",
+          "Ethanol E1 → recovery → ethanol E2",
+          "Within-vial rapid tolerance"
+        ],
+        [
+          "Matched genetic controls",
+          "Same sequence in each session",
+          "Interpret genotype effect"
+        ],
+        [
+          "Additional history control",
+          "Air E1 → recovery → ethanol challenge",
+          "Test challenge resistance attributable to prior ethanol rather than clock/day effects"
+        ]
+      ],
+      "timeline": [
+        [
+          "0:00–0:30",
+          "E1",
+          "30 min standard published induction; record LoRR."
+        ],
+        [
+          "0:30–4:00",
+          "Recovery",
+          "3.5 h on normal food under the defined housing conditions."
+        ],
+        [
+          "4:00 onward",
+          "E2",
+          "Identical nominal ethanol setting; record the same endpoint."
+        ]
+      ],
+      "analysis": [
+        "Use the vial-level paired ΔST50 for reproducing the published analysis. Show E1 and E2 values rather than only the difference.",
+        "For genotype × prior-exposure designs, consider a model with history and genotype and their interaction, with day/batch accounted for. Avoid inferring a tolerance-specific defect from a significant delta alone when E1 also changes."
+      ],
+      "modifications": [
+        {
+          "change": "Use a defined adult age window, for example 3–5 days, for a new local assay.",
+          "rationale": "Age is a plausible behavioral and pharmacokinetic confound, but the 2025 Methods do not specify an exact age.",
+          "validation": "Proposed standardization, not an age claim about Larnerd 2025. Validate both induction and challenge in that window."
+        },
+        {
+          "change": "Add an air-preexposed group to the challenge where feasible.",
+          "rationale": "The E2−E1 calculation can be influenced by the initial sensitivity and by time-dependent drift.",
+          "validation": "An additional control design, not a replacement for the published paired calculation. Match age, handling and clock time."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, pp. 3–4 and 23. Published rapid tolerance is ST50(E2) − ST50(E1). With a 30 min E1, the reported 3.5 h rest places E2 at 4 h from E1 onset. This differs from papers that specify 4 h of recovery after E1 ends.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
     },
     {
       "slug": "repeated-tolerance",
-      "title": "Plan a repeated-exposure tolerance assay",
-      "category": "behavior",
-      "summary": "A transparent four-day template with an age-matched naive challenge.",
-      "time": "4 days",
+      "title": "Run the three-bout, day-4 lab template",
+      "summary": "A detailed 10-minute × three-day design with separate LoRR and immobility outcomes.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "Days 1–3 induction; day 4 challenge",
       "level": "Intermediate",
+      "kind": "Lab-adapted template",
+      "checked": "2026-11-18",
       "materials": [
-        "Matched experimental and control cohorts",
-        "Ethanol-vapor rig",
-        "Fresh food and cohort log"
+        "Matched genotype × history cohorts collected together",
+        "Validated vapor rig with complete stock and flow log",
+        "Fresh food and daily survival/recovery sheets",
+        "Video/timer and separate LoRR/immobility columns for the final challenge"
+      ],
+      "parameters": [
+        [
+          "Days 1, 2, 3",
+          "One fixed 10 min ethanol bout, or matched humidified-air handling."
+        ],
+        [
+          "Day 4",
+          "Common acute ethanol challenge after a prespecified interval from the third bout."
+        ],
+        [
+          "Local clock example",
+          "Exactly 24 h from day-3 exposure cessation to challenge onset; record this as a proposed choice rather than a published 2025 schedule."
+        ],
+        [
+          "Dose",
+          "Choose in a separate pilot. Record ethanol stock %, branch/total/per-vial flow, temperature and rig version. A 2.5:1 branch ratio is not an ethanol gas percentage."
+        ],
+        [
+          "Primary outcome",
+          "Challenge ST50-LoRR; complete immobility may be a separately prespecified secondary endpoint."
+        ],
+        [
+          "Control history",
+          "Age-matched air bouts on days 1–3, followed by the identical day-4 ethanol challenge."
+        ]
       ],
       "steps": [
         {
-          "title": "Define the template",
-          "action": "Example schedule: one 10 min exposure on days 1, 2 and 3; an endpoint-scored challenge on day 4. This schedule is a lab template requiring validation.",
-          "why": "The example is not claimed to reproduce a published chronic-tolerance regimen."
+          "title": "Pilot induction before the main experiment",
+          "action": "Use a separate reference cohort to establish what 10 min produces in this rig: startle, hyperactivity, incoordination, LoRR, recovery and survival. Do not tune the dose using the final hypothesis-testing data.",
+          "why": "Ten minutes can be weak or strong depending on the apparatus and genotype.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Create the controls",
-          "action": "Maintain an age-matched group given humidified air on days 1–3.",
-          "why": "Day-4 age and handling must match."
+          "title": "Prespecify the factorial groups",
+          "action": "Assign genotype × air/ethanol history groups and choose the primary endpoint, maximum challenge exposure and analysis plan.",
+          "why": "A design with only the test line’s day-1/day-4 scores cannot isolate tolerance from age.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Deliver the induction sessions",
-          "action": "Use the same time of day, flow setting and 10 min duration each day.",
-          "why": "Consistency makes exposure history interpretable."
+          "title": "Collect all histories together",
+          "action": "Use the same sex, age window, rearing conditions and collection recovery. Label independent vials with persistent IDs.",
+          "why": "Matched developmental and handling histories reduce avoidable variation.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Recover and inspect",
-          "action": "Return flies to fresh food and record health and survival after each session.",
-          "why": "Selection of survivors can bias the final comparison."
+          "title": "Deliver day 1 for exactly 10 min",
+          "action": "Use the fixed external setting; handle the air-history group through the same loading and scoring routine. Return every group to fresh food.",
+          "why": "An induction schedule is defined by delivered exposure, not whether every genotype looks equally sedated.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Run the day-4 challenge",
-          "action": "Challenge both histories together. Record LoRR and immobility separately if both were prespecified.",
-          "why": "Do not compare different endpoint definitions."
+          "title": "Check and log recovery",
+          "action": "Record how soon posture returns, whether baseline locomotion is normal, and survival at the same prespecified time after the bout.",
+          "why": "Toxicity or failure to recover may compromise interpretation of the repeated design.",
+          "origin": "Editorial instruction"
         },
         {
-          "title": "Analyze the matched challenge",
-          "action": "Compare day-4 ST50 between preexposed and naive groups within genotype. Report the induction schedule in full.",
-          "why": "A day-1 versus day-4 difference alone also includes aging and day effects."
+          "title": "Repeat the locked bout on days 2 and 3",
+          "action": "Use the same 10 min setting and daily time. Record any interruption. Never add naive replacement flies to restore vial size.",
+          "why": "Every animal in a final cohort needs the same assigned history.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Keep a fixed post-bout interval",
+          "action": "For the proposed 24 h cessation-to-onset example, write the day-3 end time and schedule day-4 challenge from that time.",
+          "why": "“The next day” is not a reproducible retention interval.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Challenge all four cells concurrently",
+          "action": "Use one acute dose, flow and cutoff in all histories. Score LoRR and complete immobility independently if both were planned.",
+          "why": "Different endpoints or challenge doses defeat the history comparison.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Estimate each vial’s endpoint medians",
+          "action": "Keep raw counts and interpolate only observed 50% crossings. Name ST50-LoRR and ST50-immobility separately; retain censoring.",
+          "why": "An unchanged LoRR response can coexist with a change in late movement arrest.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate and interpret the interaction",
+          "action": "Within each genotype compare day-4 ethanol-history with day-4 air-history challenge values. Then assess whether that history effect differs between genotypes.",
+          "why": "A genotype main effect is not automatically a tolerance-specific effect.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Confirm with a separate replication",
+          "action": "Repeat with new parental crosses/days and fixed settings; include clearance and baseline motor checks if interpreting the effect mechanistically.",
+          "why": "A local regimen becomes persuasive through reproducibility and validation, not by calling it a published SOP.",
+          "origin": "Editorial instruction"
         }
       ],
       "controls": [
-        "Age-matched, air-preexposed day-4 controls",
-        "Genetic controls under both histories"
+        "All four genotype × history cells",
+        "Single-transgene controls for targeted manipulations",
+        "Daily recovery/survival logs",
+        "Parallel internal-ethanol and baseline motor cohorts"
       ],
       "record": [
-        "Every exposure date and duration",
-        "Delivery settings",
-        "Recovery and survival",
-        "Day-4 endpoint curves"
+        "Dates and actual times of all bouts",
+        "Stock and full flow metadata",
+        "Daily N, behavior, recovery and mortality",
+        "Day-4 counts for both endpoints",
+        "Per-vial challenge ST50",
+        "Prespecified exclusions and deviations"
       ],
-      "expected": "A test of adaptation to this specific repeated-exposure schedule. Whether it meets a particular definition of chronic tolerance must be established.",
+      "expected": "A well-controlled test of acquired resistance after this specific local three-bout history. A null result is possible and should not be hidden by extending exposure or altering the endpoint afterward.",
       "troubleshooting": [
         {
-          "problem": "Controls also shift",
-          "action": "Check age, handling, time of day and apparatus drift."
+          "problem": "No difference from air-history controls",
+          "action": "Check whether the induction was behaviorally effective, whether the challenge is in range, and whether timing or survival differed. A revised dose belongs in a new pilot."
         },
         {
-          "problem": "Induction seems too weak or too strong",
-          "action": "Validate a revised schedule in a separate pilot, then fix it before testing."
+          "problem": "One genotype remains awake after the challenge cutoff",
+          "action": "Keep the common cutoff and report unreached ST50. Do not force late sedation through a genotype-specific extension."
+        },
+        {
+          "problem": "Day-4 survival differs strongly between histories",
+          "action": "Show attrition and consider survivor selection. Repeat after a prospectively redesigned induction if the original dose is excessively toxic."
         }
       ],
       "sources": [
         "rapid",
+        "larnerd2025",
         "flybar"
       ],
-      "kind": "Lab-adapted template",
-      "parameters": [
+      "related": [
+        "ethanol-repeated-published",
+        "ethanol-immobility",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "This short daily induction schedule tests adaptation to a chosen repeated exposure pattern. It is scientifically useful if the dose, interval, survival and challenge are fully recorded, even before equivalence to a published paradigm is established.",
+        "Day-4 preexposed versus day-4 air-history controls isolate the exposure-history effect better than day-1 versus day-4 ST50 alone.",
+        "Induction is a fixed 10 min exposure, not a requirement to reach ST50 or complete immobility. The final challenge is the endpoint-scored measurement."
+      ],
+      "groups": [
         [
-          "Day 1",
-          "10 min ethanol or matched air"
+          "Control genotype / air history",
+          "Air on days 1–3 → day-4 ethanol",
+          "Reference challenge"
         ],
         [
-          "Day 2",
-          "Same 10 min induction"
+          "Control genotype / ethanol history",
+          "10 min ethanol on days 1–3 → challenge",
+          "Reference adaptation"
         ],
         [
-          "Day 3",
-          "Same 10 min induction"
+          "Test genotype / air history",
+          "Air on days 1–3 → challenge",
+          "Innate test-genotype sensitivity"
+        ],
+        [
+          "Test genotype / ethanol history",
+          "Same three 10 min bouts → challenge",
+          "Genotype-specific history effect"
+        ]
+      ],
+      "timeline": [
+        [
+          "Days 1–3",
+          "10 min each day",
+          "Keep the daily start, dose and handling fixed."
+        ],
+        [
+          "After each bout",
+          "Recovery on food",
+          "Record righting, health and survival; do not replace flies."
         ],
         [
           "Day 4",
-          "Matched challenge; score prespecified endpoints"
+          "Common challenge",
+          "Separate LoRR and immobility score columns at the locked interval."
         ]
       ],
-      "related": [
-        "rapid-tolerance",
-        "ethanol-sensitivity"
+      "analysis": [
+        "Primary contrast: ST50day4,EtOHhistory − ST50day4,airhistory within genotype. Percentage history effect can be 100 × this difference / ST50day4,airhistory; label the formula.",
+        "The source paired E2−E1 formula from a two-exposure rapid assay must not be substituted using a short induction that never reached ST50.",
+        "Use a genotype × history model with day/cross blocking or an equivalent prespecified approach. Show the raw challenge values and uncertainty."
       ],
-      "checked": "2026-11-17"
+      "modifications": [
+        {
+          "change": "Keep the three 10 min bouts but add matched air-history controls.",
+          "rationale": "This preserves the intended schedule while making the day-4 comparison interpretable.",
+          "validation": "Validate the induction range, survival and clearance before the main dataset."
+        },
+        {
+          "change": "Use LoRR as primary and immobility as secondary.",
+          "rationale": "This preserves the distinction behind the lab’s scoring question.",
+          "validation": "Lock both operational definitions and correct for multiple planned claims where appropriate."
+        },
+        {
+          "change": "Benchmark against one published schedule in a separate experiment.",
+          "rationale": "It tests whether a local adaptation produces a comparable phenotype without assuming identical mechanisms.",
+          "validation": "Do not combine the benchmark and template in one unlabeled pooled analysis."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "The 10 min on days 1–3 / day-4 challenge schedule is the user’s laboratory template. It is not the 2023 20 min × four-bout regimen and not the 2025 48 h continuous chronic exposure. Its induction dose and effectiveness require local validation.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
     },
     {
       "slug": "negative-geotaxis",
@@ -3059,7 +3557,9 @@ window.FLYBENCH_DATA = {
       ],
       "sources": [
         "flybar",
-        "rapid"
+        "rapid",
+        "larnerd2025",
+        "toleranceconfound"
       ],
       "kind": "Analysis guide",
       "parameters": [
@@ -3078,9 +3578,3624 @@ window.FLYBENCH_DATA = {
       ],
       "related": [
         "ethanol-sensitivity",
+        "rapid-tolerance",
+        "ethanol-study-design",
+        "ethanol-immobility"
+      ],
+      "checked": "2026-11-18",
+      "analysis": [
+        "Keep the published paired E2−E1 estimator distinct from preexposed-versus-air-history challenge contrasts. Report their formulas and underlying ST50 values.",
+        "A curve not crossing 50% by the fixed cutoff has an unreached median, not a median equal to the cutoff. Retain its raw observations and status.",
+        "A sensitivity-dependent induction can affect tolerance estimates. Use the alcohol design page to declare fixed-exposure versus response-scaled questions."
+      ]
+    },
+    {
+      "slug": "ethanol-delivery",
+      "title": "Build and calibrate an ethanol-vapor experiment",
+      "summary": "Record what the rig delivers before choosing an alcohol paradigm.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "One setup session, then checks each assay day",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Steady air supply, regulators and calibrated flow meters suitable for the actual gas and range",
+        "Separate ethanol and water bubblers with secure inlet/outlet arrangements",
+        "Mixing vessel, compatible tubing, splitters, leak-check materials and independent flow verification",
+        "Escape-proof observation chambers with mesh-protected lines and unobstructed outlets",
+        "Thermometer, timer, chamber labels and ventilated collection of exhaust",
+        "Identified ethanol stock, water and a reference fly cohort"
+      ],
+      "parameters": [
+        [
+          "FlyBar named example",
+          "1,000 mL/min total for four observation vials; approximately 250 mL/min/vial only when splitting is equal."
+        ],
+        [
+          "FlyBar temperature example",
+          "Room 25°C and water bath 27°C; this is the source setup, not a requirement for every rig."
+        ],
+        [
+          "Local ratio example",
+          "2.5 L/min ethanol branch + 1.0 L/min water branch = 3.5 L/min carrier flow; ethanol-branch fraction = 71.43%."
+        ],
+        [
+          "What 71.43% means",
+          "A fraction of carrier flow. It is not a measured 71.43% v/v ethanol gas and not the concentration of the liquid stock."
+        ],
+        [
+          "Reported 55% or 16% in Larnerd",
+          "Retain the source nominal vapor notation. Do not recreate it by diluting liquid ethanol to 55% or 16%."
+        ],
+        [
+          "Minimum dose log",
+          "Stock % and type; ethanol and water branch flows; total and per-vial flow; temperature; chamber volume; timing; measured gas/internal dose if available."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Map the flow path",
+          "action": "Draw air supply → separately regulated ethanol and water branches → mixing vessel → experimental chambers → captured exhaust. Mark the measurement points and the valves used for switching.",
+          "why": "A diagram makes accidental dilution, bypasses and wrongly connected inlets visible.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Inspect each bubbler",
+          "action": "Confirm that inlet gas bubbles through liquid and outlet tubing samples the headspace, with liquid carried neither into the mixing bottle nor into the fly chambers. Use fittings compatible with the reagents.",
+          "why": "Liquid carryover creates a different exposure and can wet or trap flies.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Commission on air",
+          "action": "Run the system without ethanol exposure to flies. Verify stable total flow and flow through every chamber with all intended branches connected. Check for leaks and blocked mesh.",
+          "why": "A regulator reading upstream of a leak does not establish the flow at the flies.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Stabilize the bottles and the room",
+          "action": "Record liquid levels and temperatures, allow the arrangement to stabilize, and define the same preparation routine for all runs. Do not copy the FlyBar bath setting without checking the local geometry and source protocol.",
+          "why": "Vapor pressure, bubbling and downstream condensation depend on temperature and apparatus.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Set the experimental mixture",
+          "action": "Choose the ethanol-branch and humidified-air flows while keeping the planned total flow fixed. Log both numbers rather than only a shorthand ratio.",
+          "why": "Changing both fraction and total flow changes chamber exchange and stimulation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Measure delay and exchange",
+          "action": "Determine when the switched stream reaches the chamber using a suitable validated measurement method. Record valve-on time and the definition of exposure zero.",
+          "why": "Tubing dead volume means valve time and fly exposure time need not coincide.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run a reference-cohort pilot",
+          "action": "Collect a complete endpoint curve at a small number of prespecified settings, with air controls. Identify a setting that gives a usable dynamic range and acceptable survival.",
+          "why": "A literature setting is a starting reference, not a guaranteed local dose.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Freeze and document the method",
+          "action": "Write a versioned configuration including bottle stock, flow settings, temperatures, chamber geometry, score schedule, stop rule and washout. Recheck after hardware or stock changes.",
+          "why": "Comparisons across days require the same operational dose definition.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Air-only sham switching at the same total flow",
+        "Concurrent reference strain in a randomized channel",
+        "Blank chambers for physical dose measurements",
+        "Internal-ethanol samples when comparing functional tolerance"
+      ],
+      "record": [
+        "Rig version and tubing layout",
+        "Liquid stock %",
+        "Branch/total/per-vial flows",
+        "Bottle and room temperature",
+        "Exposure-zero definition",
+        "Channel allocation",
+        "Pilot curve and survival"
+      ],
+      "expected": "A reproducible external exposure configuration with enough information for another laboratory to understand what was delivered. It does not, by itself, establish an internal ethanol concentration.",
+      "troubleshooting": [
+        {
+          "problem": "Flies in one channel sedate earlier",
+          "action": "Check that channel for obstruction, unequal splitting, leaks, liquid carryover and temperature differences before attributing the effect to genotype."
+        },
+        {
+          "problem": "A 2.5:1 ratio does not reproduce a published setting",
+          "action": "Compare units, total flow, stock, temperature, saturation, geometry and internal dose. A ratio alone cannot transfer a dose across rigs."
+        }
+      ],
+      "sources": [
+        "flybar",
+        "larnerd2025",
+        "gprk2020"
+      ],
+      "related": [
+        "ethanol-sensitivity",
+        "ethanol-internal-levels",
         "rapid-tolerance"
       ],
-      "checked": "2026-11-17"
+      "rationale": [
+        "The concentration in a stock bottle, the fraction of carrier air sent through that bottle, the ethanol content of the gas entering a vial, and the internal ethanol in a fly are four different quantities. Record them separately.",
+        "A stable external setting is necessary for a genotype comparison. It is not sufficient evidence of equal internal exposure: absorption, ventilation, body size and clearance can differ.",
+        "An empty mixing vessel and a stable total flow help separate a concentration change from an airflow or mechanical startle. Match tubing lengths and verify delivery at the occupied branches."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Calculate carrier fraction as QE/(QE+QW). If total flow is split to k chambers, do not assume Qtotal/k unless the branches are verified equal.",
+        "Report measured gas concentration only with the instrument, calibration, sampling point and units. Report internal ethanol separately with the analytical method."
+      ],
+      "modifications": [
+        {
+          "change": "Keep total flow constant when screening nominal vapor fractions.",
+          "rationale": "This reduces a simultaneous change in chamber exchange and mechanical stimulation.",
+          "validation": "Verify per-chamber flow at every tested setting."
+        },
+        {
+          "change": "Use video synchronized with valve events.",
+          "rationale": "This resolves scoring disagreements and makes delivery delay auditable.",
+          "validation": "Check timestamp alignment and keep a blinded scoring subset."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Source anchors: FlyBar (2014), Protocol 1; Larnerd (2025), Methods p. 23. Different rigs use different flow units and nominal vapor labels. The practical commissioning steps below are an editorial checklist, not a universal apparatus specification.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-immobility",
+      "title": "Score LoRR and complete immobility separately",
+      "summary": "An endpoint-comparison design for labs that measure both postural failure and late movement arrest.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "One acute session plus blinded video scoring",
+      "level": "Intermediate",
+      "kind": "Lab-adapted template",
+      "checked": "2026-11-18",
+      "materials": [
+        "The validated acute vapor setup and matched fly cohorts",
+        "Video with enough resolution for leg, wing and head movement",
+        "A written scoring atlas containing examples and ambiguous cases",
+        "Two independent score columns, random clip codes and an adjudication log"
+      ],
+      "parameters": [
+        [
+          "LoRR",
+          "Failure to regain upright posture after the defined disturbance; name the response window."
+        ],
+        [
+          "Complete immobility",
+          "No observable head, leg, wing or body movement during the defined window after the defined stimulus."
+        ],
+        [
+          "Proposed window example",
+          "A 5 s post-stimulus observation can be piloted; it is not a universal or paper-validated immobility definition."
+        ],
+        [
+          "Denominator",
+          "All animals assigned to the vial; record trapping, death and missing observations separately."
+        ],
+        [
+          "Maximum exposure",
+          "One common, pilot-defined cutoff for both endpoint curves. Do not extend the immobility arm genotype by genotype."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Create a score dictionary",
+          "action": "Define upright walking, standing/grooming, LoRR with movement, and complete immobility. Decide how transient events and responses outside the window are handled.",
+          "why": "A score atlas makes the endpoint reproducible across people.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pilot visibility and stimulus strength",
+          "action": "Use a reference cohort to choose magnification, lighting and a standardized tap. Confirm that small movements remain visible and that the chamber can be scored without repeated unscheduled disturbances.",
+          "why": "A dim or obstructed image can turn subtle movement into false immobility.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record the same animals continuously",
+          "action": "Synchronize the exposure start and every planned disturbance with video. Preserve the raw movie and analysis copies.",
+          "why": "The same exposure history makes the two endpoints comparable.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Score both columns at each time",
+          "action": "Count LoRR and immobility independently; do not assume that every nonmoving animal has lost its righting capacity. Note flies occluded by others.",
+          "why": "Standing quietly is not equivalent to failed righting.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Blind a second scorer",
+          "action": "Provide randomly coded clips to another scorer. Compare raw counts and adjudicate discrepancies against the written definitions.",
+          "why": "Agreement should be demonstrated before interpreting a genotype reversal.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Recover under the same rule",
+          "action": "End ethanol at the fixed cutoff and monitor righting, movement and survival separately.",
+          "why": "Recovery can distinguish reversible behavioral depression from lasting impairment.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Plot two curves and two medians",
+          "action": "Use ST50-LoRR and ST50-immobility names throughout. For the same vial, quantify the endpoint gap only when both medians are observed.",
+          "why": "The endpoint label is part of the measurement, not an optional annotation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Report the interpretation narrowly",
+          "action": "Describe postural sensitivity and late movement arrest. Test internal ethanol and baseline motor function before proposing a circuit or consciousness explanation.",
+          "why": "Behavior alone does not identify the mechanism underlying the difference.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Matched air + stimulus groups",
+        "Reference clips and independent blinded scorers",
+        "Baseline locomotion and post-exposure survival"
+      ],
+      "record": [
+        "Both endpoint counts",
+        "Actual response window and stimulus",
+        "Video IDs and ambiguous cases",
+        "Scorer agreement",
+        "Both ST50 values or cutoff status"
+      ],
+      "expected": "A transparent comparison of two motor endpoints. A later complete-immobility time is not a direct measurement of a deeper state of unconsciousness.",
+      "troubleshooting": [
+        {
+          "problem": "Immobility appears before LoRR",
+          "action": "Check whether standing, grooming or a hidden fly was counted as immobile. Revisit the score definition and the same video before changing data."
+        },
+        {
+          "problem": "A very resistant genotype never becomes immobile",
+          "action": "Keep the common cutoff and report the endpoint as unreached. A separate dose–response pilot can test a stronger regimen later."
+        }
+      ],
+      "sources": [
+        "flybar",
+        "endpoints",
+        "larnerd2025"
+      ],
+      "related": [
+        "ethanol-sensitivity",
+        "ethanol-recovery",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "Righting failure and movement arrest are observable behaviors with overlapping but nonidentical dose–time relationships. Neither is a validated direct measure of consciousness in a fly.",
+        "A later endpoint generally entails a longer exposure if flies are dosed until that endpoint. Thus an apparent “sensitivity” difference may also reflect accumulated ethanol, early adaptation, injury or fatigue.",
+        "Separate curves preserve information: a genotype may show early postural failure but retain small limb movements for longer. This is a biological difference to investigate, not a reason to overwrite one score with the other."
+      ],
+      "groups": [
+        [
+          "Each genotype + ethanol",
+          "Video both endpoints in the same fixed exposure",
+          "Endpoint comparison"
+        ],
+        [
+          "Each genotype + air",
+          "Same time, tapping and handling",
+          "Motor and handling control"
+        ]
+      ],
+      "timeline": [],
+      "analysis": [
+        "Within a vial, the two endpoint estimates are correlated. Use paired summaries or a model accounting for vial when studying the endpoint gap.",
+        "Compare genotypes with endpoint as a factor only if the analysis accounts for the repeated measurements; avoid treating two endpoints from one vial as two biological replicates."
+      ],
+      "modifications": [
+        {
+          "change": "Use one fixed exposure for both curves.",
+          "rationale": "This separates endpoint scoring from unequal dose duration.",
+          "validation": "Check that the exposure safely spans a useful range; unresolved medians stay unresolved."
+        },
+        {
+          "change": "Add high-resolution video and a second blinded scorer.",
+          "rationale": "This directly addresses small-movement disagreements.",
+          "validation": "Quantify agreement on raw counts and keep the adjudication rule in the methods."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "FlyBar distinguishes LoRR from motionlessness after mechanical stimulation. The two-column, blinded-video scheme and the suggested response-window examples here are local adaptations; they do not redefine the LoRR endpoint used in Larnerd 2025.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-art-24h",
+      "title": "Measure 24-hour rapid tolerance and ART",
+      "summary": "Separate the later resistant component from the mixed four-hour response.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "24 h between exposure starts",
+      "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "The acute E1/E2 setup",
+        "Fresh food and documented next-day holding conditions",
+        "Independent 4 h and 24 h cohorts when comparing intervals",
+        "Cold-shock and sham groups if classifying resistance"
+      ],
+      "parameters": [
+        [
+          "Published cohorts",
+          "Adult males; about 20 genetically identical flies per group is n = 1. Exact adult age is not stated in the supplied Methods."
+        ],
+        [
+          "Rearing",
+          "25°C, 60% RH, 12 h light : 12 h dark; cornmeal/molasses/yeast food. Thermogenetic crosses were raised at 18°C."
+        ],
+        [
+          "Collection recovery",
+          "At least 1 day after CO₂ collection before any behavioral paradigm."
+        ],
+        [
+          "Genetic background",
+          "At least five outcross generations to Berlin carrying w1118 or v1; w1118 Berlin was the loss-of-function control."
+        ],
+        [
+          "Induction",
+          "Standard source example: nominal 55% vapor, 30 min."
+        ],
+        [
+          "Rest after standard E1",
+          "23.5 h, placing E2 24 h after E1 onset."
+        ],
+        [
+          "Challenge endpoint",
+          "LoRR, every 6 min in the source."
+        ],
+        [
+          "Reported calculation",
+          "Paired ST50(E2) − ST50(E1)."
+        ],
+        [
+          "Cold-shock tests",
+          "Source tests early after E1 or shortly before E2; use the separate cold-shock page for exact clocks."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Allocate distinct delay cohorts",
+          "action": "Create separate vials for 4 h and 24 h tests; do not test the same vial at 4 h and then call its third exposure a 24 h rapid-tolerance test.",
+          "why": "A four-hour E2 becomes an additional induction event.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Collect E1 measurements",
+          "action": "Record full acute LoRR curves with the same standard regimen across the compared delay groups.",
+          "why": "Differences in the initiating exposure can change persistence.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Maintain an undisturbed interval",
+          "action": "Return flies to matched fresh food and normal light/temperature conditions. Keep density and age records.",
+          "why": "The interval should not add starvation, anesthesia or temperature treatments unless those are the question.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Schedule the next-day challenge",
+          "action": "Use 24 h from E1 onset for the 2025 schedule; with a 30 min E1 this is a 23.5 h rest. Record actual timestamps.",
+          "why": "The same clock phase reduces one source of circadian confounding.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Add cold-shock and sham arms",
+          "action": "To establish an ART-like response in a new genotype, include the matched factorial design rather than merely assuming resistance from the delay.",
+          "why": "Cold resistance is an experimentally tested property.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Challenge matched histories together",
+          "action": "Run ethanol-preexposed, air-preexposed and genetic control groups in randomized positions using the same LoRR criterion.",
+          "why": "Next-day drift should not be mistaken for persistence.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate source and augmented contrasts",
+          "action": "Retain paired E2−E1 where possible and also report the challenge-history effect. Keep the four-hour and 24-hour datasets identifiable.",
+          "why": "The two delays and two possible estimators answer related but distinct questions.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Interpret persistence conservatively",
+          "action": "Report the effect as 24 h rapid tolerance, and ART-like only if supported by the cold-shock comparison under the new conditions.",
+          "why": "A nonsignificant cold effect with poor precision is not proof of equivalence.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Separate 4 h cohort",
+        "Air-preexposed next-day cohort",
+        "Sham and cold-shock histories",
+        "Matched genetic and age controls"
+      ],
+      "record": [
+        "Delay from onset and from cessation",
+        "Actual E1 and E2 times",
+        "Cold-shock history",
+        "Both ST50 values",
+        "Survival and exclusions"
+      ],
+      "expected": "Evidence about persistence and cold resistance of acute-exposure tolerance. This remains distinct from continuous low-dose chronic tolerance.",
+      "troubleshooting": [
+        {
+          "problem": "No detectable tolerance at 24 h",
+          "action": "Check induction, clearance, survival and sensitivity to the common challenge. The published persistence is not guaranteed for all backgrounds."
+        },
+        {
+          "problem": "Cold shock changes air-history challenge sensitivity",
+          "action": "Interpret the history × shock interaction rather than assigning the entire cold effect to erasure of a tolerance trace."
+        }
+      ],
+      "sources": [
+        "larnerd2025"
+      ],
+      "related": [
+        "rapid-tolerance",
+        "ethanol-cold-shock",
+        "ethanol-chronic-tolerance"
+      ],
+      "rationale": [
+        "The same acute induction can be followed by a longer interval without becoming the 48 h chronic induction paradigm. Duration of the delay and duration of the exposure are different design axes.",
+        "In the supplied paper the labile contribution dissipates between 3 and 24 h, leaving an ART-like response at 24 h. Time alone, without a cold-shock control in a new context, does not establish its mechanism.",
+        "A next-day challenge also changes adult age and introduces day-to-day apparatus variation. Independent air-history and same-session genetic controls help interpret those changes."
+      ],
+      "groups": [],
+      "timeline": [
+        [
+          "Day 1, t = 0",
+          "Acute E1",
+          "Run the fixed 30 min induction."
+        ],
+        [
+          "t = 0:30 to 24:00",
+          "Recovery",
+          "23.5 h on food for the standard example."
+        ],
+        [
+          "Day 2, t = 24:00",
+          "E2",
+          "Challenge at the same nominal setting and clock phase."
+        ]
+      ],
+      "analysis": [
+        "Test a history × cold-shock interaction, and report the effect and confidence interval. A nonsignificant result alone does not demonstrate that the cold effect is negligible.",
+        "If comparing persistence across 4 h and 24 h, account for test day and avoid reusing the same animals for both challenge times."
+      ],
+      "modifications": [
+        {
+          "change": "Use a defined adult age window, for example 3–5 days, for a new local assay.",
+          "rationale": "Age is a plausible behavioral and pharmacokinetic confound, but the 2025 Methods do not specify an exact age.",
+          "validation": "Proposed standardization, not an age claim about Larnerd 2025. Validate both induction and challenge in that window."
+        },
+        {
+          "change": "Add an air-preexposed group to the challenge where feasible.",
+          "rationale": "The E2−E1 calculation can be influenced by the initial sensitivity and by time-dependent drift.",
+          "validation": "An additional control design, not a replacement for the published paired calculation. Match age, handling and clock time."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, Fig. 1 and Methods p. 23. Their 24 h rapid tolerance is cold-shock resistant in the tested backgrounds. This is a property demonstrated under those conditions, not a definition guaranteed in every new genotype.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-cold-shock",
+      "title": "Separate cold-sensitive AST from cold-resistant tolerance",
+      "summary": "A factorial cold-shock design with explicit onset, recovery and shock clocks.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "4 h or 24 h acute schedule; optional chronic comparison",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Paired E1/E2 cohorts and additional air-history cohorts",
+        "Temperature-monitored 4°C cold bath and timer",
+        "Standard vials with about 20 flies, dry labels and arrangements preventing water entry",
+        "Matched sham handling at the normal holding temperature",
+        "Recovery incubator and blinded endpoint scoring"
+      ],
+      "parameters": [
+        [
+          "Published cohorts",
+          "Adult males; about 20 genetically identical flies per group is n = 1. Exact adult age is not stated in the supplied Methods."
+        ],
+        [
+          "Rearing",
+          "25°C, 60% RH, 12 h light : 12 h dark; cornmeal/molasses/yeast food. Thermogenetic crosses were raised at 18°C."
+        ],
+        [
+          "Collection recovery",
+          "At least 1 day after CO₂ collection before any behavioral paradigm."
+        ],
+        [
+          "Genetic background",
+          "At least five outcross generations to Berlin carrying w1118 or v1; w1118 Berlin was the loss-of-function control."
+        ],
+        [
+          "Cold treatment",
+          "4°C bath, 3 min in Larnerd 2025. Record actual bath temperature."
+        ],
+        [
+          "Early shock clock",
+          "30 min after E1 ends; for E1 = 0:00–0:30, cold shock begins at 1:00."
+        ],
+        [
+          "Late 4 h shock clock",
+          "30 min before E2; for E2 onset 4:00, shock begins at 3:30, which is 3 h after E1 ends."
+        ],
+        [
+          "Late 24 h shock clock",
+          "30 min before E2; for E2 onset 24:00, shock begins at 23:30, which is 23 h after E1 ends."
+        ],
+        [
+          "Sham",
+          "Same transfer, holding duration and return routine without anesthetic cooling."
+        ],
+        [
+          "Chronic extension",
+          "Apply a specified early or late shock after 48 h induction in separate cohorts; chronic-clock origin is the end of chronic exposure."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose one shock window per cohort",
+          "action": "Write the timing relative to E1 end and E2 start. Allocate different cohorts for early, late, four-hour and 24-hour comparisons.",
+          "why": "Multiple shocks on one cohort test a different intervention.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Build the four-cell history design",
+          "action": "Within each genotype/day include ethanol versus air pre-exposure, crossed with cold versus sham. If reproducing paired E2−E1, retain the E1 linkage as well.",
+          "why": "Air-history shock controls detect direct changes in challenge sensitivity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver the fixed induction",
+          "action": "Use the same E1 regimen and endpoint scoring in the cold and sham arms. Record E1 ST50 before any shock occurs.",
+          "why": "An apparent later cold effect should not begin as an unequal initial response.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Verify the cold bath",
+          "action": "Measure the bath near the vials; stabilize at the intended 4°C condition. Keep vials dry and prevent water reaching flies.",
+          "why": "Temperature and wetting change the treatment.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply the 3 min shock",
+          "action": "At the assigned time, cool for exactly the prespecified 3 min and return to normal conditions. Handle sham vials in parallel.",
+          "why": "The intervention is a time–temperature treatment, not merely a label.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Check return of locomotion",
+          "action": "Record whether flies lose locomotion and regain it promptly after warming. Do not add anesthetic or unscheduled recovery time to only one arm.",
+          "why": "Persistent impairment can contaminate the challenge measurement.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run E2 at its original clock",
+          "action": "The shock does not reset the planned challenge time. Score the same LoRR criterion and maintain blinding to shock history.",
+          "why": "Delaying one arm changes the memory-retention interval.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate a cold-sensitive history contrast",
+          "action": "Compare the ethanol-history effect under sham with the ethanol-history effect after cold. In the augmented design, contrast = [challengeEtOH,sham − challengeAir,sham] − [challengeEtOH,cold − challengeAir,cold].",
+          "why": "This removes a simple direct cold shift from the history interpretation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Report the operational conclusion",
+          "action": "A supported reduction is consistent with a cold-sensitive tolerance contribution. Remaining tolerance is cold-resistant under the tested treatment, not proof of a particular cellular storage mechanism.",
+          "why": "Behavioral fractionation and mechanistic localization are separate claims.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "All four history × shock cells",
+        "Matched genetic controls",
+        "Baseline locomotion and recovery from shock",
+        "Cold bath measurement and sham transfer"
+      ],
+      "record": [
+        "Clock origin and exact shock timestamp",
+        "Actual bath temperature and duration",
+        "E1 and E2 curves",
+        "Air-history challenge shift",
+        "Return of locomotion",
+        "History × shock effect"
+      ],
+      "expected": "An estimate of the cold-sensitive and cold-resistant contributions under a specified schedule. The source found cold-sensitive rapid tolerance at 4 h and cold-resistant tolerance at 24 h.",
+      "troubleshooting": [
+        {
+          "problem": "Cold treatment lowers ST50 in every group",
+          "action": "Inspect the air-history shock effect and motor recovery; a global cold effect cannot be assigned entirely to AST."
+        },
+        {
+          "problem": "Shock timing appears inconsistent between Methods and figure",
+          "action": "Write both clocks. With a 30 min E1, a shock 30 min before the four-hour E2 occurs three hours after E1 cessation."
+        },
+        {
+          "problem": "No cold effect but wide confidence interval",
+          "action": "Report the uncertainty and improve precision; absence of significance is not evidence of resistance."
+        }
+      ],
+      "sources": [
+        "larnerd2025"
+      ],
+      "related": [
+        "rapid-tolerance",
+        "ethanol-art-24h",
+        "ethanol-chronic-tolerance",
+        "ethanol-paper-circuits"
+      ],
+      "rationale": [
+        "AST is the part of the tolerance phenotype operationally disrupted by amnestic cold shock under a controlled comparison. The four-hour response is not synonymous with AST because ART is present too.",
+        "Cold can directly change motor performance and physiology. Ethanol-history × shock groups, including air-history shock controls, help separate nonspecific cold effects from a history-dependent loss.",
+        "The paper’s specified 4°C bath is not automatically the same as an unmeasured ice/water bath near 0°C. Measure and report the bath conditions rather than assuming the word “ice” fixes temperature."
+      ],
+      "groups": [
+        [
+          "Air history / sham",
+          "No ethanol induction, sham handling",
+          "Challenge reference"
+        ],
+        [
+          "Air history / cold",
+          "No ethanol induction, same cold treatment",
+          "Nonspecific cold effect"
+        ],
+        [
+          "Ethanol history / sham",
+          "Fixed induction, sham handling",
+          "Total history effect"
+        ],
+        [
+          "Ethanol history / cold",
+          "Same induction, cold treatment",
+          "History effect remaining after cold"
+        ]
+      ],
+      "timeline": [
+        [
+          "0:00–0:30",
+          "Acute E1",
+          "Standard induction."
+        ],
+        [
+          "1:00–1:03",
+          "Early shock example",
+          "30 min after E1 cessation."
+        ],
+        [
+          "3:30–3:33 or 23:30–23:33",
+          "Late shock alternatives",
+          "30 min before the 4 h or 24 h E2; use different cohorts, not all shocks on one vial."
+        ],
+        [
+          "4:00 or 24:00",
+          "E2",
+          "Same endpoint and dose as the matching sham arm."
+        ]
+      ],
+      "analysis": [
+        "Analyze the factorial interaction, preferably with day/batch included. For the source paired design also show ΔST50 by shock condition and the corresponding E1 sensitivity.",
+        "Do not define ART as the sham–cold difference; that difference is the cold-sensitive contribution. Do not infer AST = 0 only because a test is nonsignificant."
+      ],
+      "modifications": [
+        {
+          "change": "Add air-history × cold/sham controls.",
+          "rationale": "This distinguishes a history-specific cold effect from general cold-induced sensitivity.",
+          "validation": "Use concurrent cohorts with identical challenge times."
+        },
+        {
+          "change": "Measure vial/bath temperature rather than relying on an ice-bath label.",
+          "rationale": "The 2025 source explicitly says 4°C.",
+          "validation": "Record the actual temperature and recovery behavior in every run."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, Fig. 1, Fig. 10 and Methods p. 23: 4°C for 3 min. The early shock is 30 min after E1 cessation; the late shock is 30 min before E2. Fig. 1’s late positions correspond to 3 h or 23 h after cessation for standard 30 min E1.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-chronic-tolerance",
+      "title": "Induce continuous low-dose chronic tolerance",
+      "summary": "The paper’s 48-hour induction, 24–72-hour rest and matched-history challenge design.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "48 h induction + 24–72 h rest + challenge",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Perforated 50 mL conical fly-housing tubes with 5 mL standard food each",
+        "Temperature/light-controlled exposure chamber capable of continuous humidified delivery",
+        "Verified low-dose vapor configuration, escape barriers and exhaust collection",
+        "Matched air-exposure chamber/lines without ethanol cross-contamination",
+        "Fresh food for rest, exposure and survival logs, final LoRR assay"
+      ],
+      "parameters": [
+        [
+          "Published cohorts",
+          "Adult males; about 20 genetically identical flies per group is n = 1. Exact adult age is not stated in the supplied Methods."
+        ],
+        [
+          "Rearing",
+          "25°C, 60% RH, 12 h light : 12 h dark; cornmeal/molasses/yeast food. Thermogenetic crosses were raised at 18°C."
+        ],
+        [
+          "Collection recovery",
+          "At least 1 day after CO₂ collection before any behavioral paradigm."
+        ],
+        [
+          "Genetic background",
+          "At least five outcross generations to Berlin carrying w1118 or v1; w1118 Berlin was the loss-of-function control."
+        ],
+        [
+          "Chronic induction",
+          "Nominal 16% ethanol vapor continuously for 48 h; matched controls receive 100% humidified air."
+        ],
+        [
+          "Housing",
+          "Perforated 50 mL conical tubes, 5 mL food per tube. Verify airflow access without escape or wetting."
+        ],
+        [
+          "Recovery",
+          "24–72 h after chronic exposure ends, on standard housing conditions. Use separate cohorts for each delay."
+        ],
+        [
+          "Published replication",
+          "15–20 independent groups per treatment/genotype, accumulated across days. This is a source report, not a universal power calculation."
+        ],
+        [
+          "Final challenge",
+          "Lock one common acute LoRR challenge regimen for both histories. The local numeric setting, score grid and cutoff must be recorded; do not silently infer them from an unlabeled figure."
+        ],
+        [
+          "Tolerance",
+          "Challenge ST50(ethanol history) − challenge ST50(air history), paired within daily cohorts as specified."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose one retention delay",
+          "action": "Select 24 h for an initial replication or prespecify a 24/48/72 h persistence series. Calculate the required adults and parallel controls before induction.",
+          "why": "Testing the same cohort repeatedly would add new acute exposures.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Prepare matched housing",
+          "action": "Use perforated 50 mL tubes with 5 mL of the same food batch in both history arms. Confirm flies can feed and remain dry throughout the exposure.",
+          "why": "Food access, crowding and humidity influence chronic stress and survival.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Commission continuous delivery",
+          "action": "Validate stable low-dose delivery over the full 48 h with a reference setup. Record stock/flow/temperature metadata, line continuity and any refills or interruptions.",
+          "why": "A nominal low dose at the start does not establish constant dose for two days.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Start air and ethanol histories together",
+          "action": "Randomize tube positions and include every genotype under both histories. Keep light and temperature schedules the same.",
+          "why": "History comparisons require the same environmental and age trajectory.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Monitor without adding unequal disturbances",
+          "action": "At prespecified checks record airflow, temperature, condensation, food condition and visible mortality. Apply predefined apparatus-failure rules to the batch.",
+          "why": "Survivor selection or interrupted exposure can create a false resistant cohort.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "End exactly 48 h later",
+          "action": "Stop the induction and return all groups to standard fresh food. This cessation is time zero for the retention interval.",
+          "why": "The recovery clock starts at the end of chronic exposure, unlike the onset-to-onset label used for acute E1/E2.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Allow the defined rest",
+          "action": "Maintain normal food access and the same handling across histories. Confirm ethanol clearance in separate matched samples when transferring to a new rig/background.",
+          "why": "Residual drug and nutritional stress complicate the interpretation of persistence.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Randomly pair daily groups",
+          "action": "Before seeing challenge outcomes, assign air and ethanol history pairings within genotype and day, as in the paper. Preserve the pairing in the data.",
+          "why": "Pairing after looking at values can bias the tolerance estimate.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run a common challenge",
+          "action": "Challenge both histories at one locked nominal dose, flow and scoring schedule. Record the complete LoRR time course.",
+          "why": "The measured change must come from history, not different challenge conditions.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate history-dependent resistance",
+          "action": "Interpolate one challenge ST50 per vial, then calculate ethanol-history minus matched air-history ST50. Retain the individual group values and all unreached endpoints.",
+          "why": "The induction has no required sedation ST50 to subtract.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Assess persistence and alternatives",
+          "action": "Compare planned delays with their own age-matched controls; examine health, internal ethanol and baseline movement.",
+          "why": "A persistent shift alone does not prove the specific DPM/CREB mechanism identified in the source.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Air-preexposed cohort for every genotype and delay",
+        "Matched single-transgene/background controls under both histories",
+        "Chamber/line position controls",
+        "Survival, baseline motor behavior and residual ethanol"
+      ],
+      "record": [
+        "48 h start/end and interruption log",
+        "Housing, food and chamber settings",
+        "Adult ages at induction and challenge",
+        "Rest delay from cessation",
+        "Preassigned history pairing",
+        "Challenge counts and ST50",
+        "Mortality and dose metadata"
+      ],
+      "expected": "A challenge-sensitivity shift after continuous low-dose exposure and a defined drug-free interval. It is separate from repeated-bout tolerance and from pure 24 h ART.",
+      "troubleshooting": [
+        {
+          "problem": "Food dries or tubes accumulate condensation",
+          "action": "Validate humidity, temperature and flow without changing only one history arm. Repeat a compromised batch according to prespecified failure rules."
+        },
+        {
+          "problem": "Only survivors show a large resistance shift",
+          "action": "Report induction mortality and compare health. The result may partly reflect selection rather than acquired tolerance."
+        },
+        {
+          "problem": "A day-4 repeated protocol is called chronic tolerance",
+          "action": "Name the actual exposure pattern. Cross-reference it as repeated exposure; do not claim the 48 h continuous regimen was performed."
+        }
+      ],
+      "sources": [
+        "larnerd2025"
+      ],
+      "related": [
+        "ethanol-repeated-published",
+        "repeated-tolerance",
+        "ethanol-cold-shock",
+        "ethanol-paper-circuits"
+      ],
+      "rationale": [
+        "Continuous low-dose exposure can produce persistent plasticity distinct from one sedating exposure. The 48 h induction is part of what defines this published paradigm. A three-day series of ten-minute bouts is not this method.",
+        "The relevant comparison is the final challenge in ethanol-preexposed versus air-preexposed groups matched for age, housing and handling. The low induction is not expected to provide an E1 sedation ST50, so subtracting an “induction ST50” would be inappropriate.",
+        "In the paper, chronic tolerance engages DPM activity and GABAergic signaling differently from rapid tolerance. A behavioral resemblance does not establish that a new schedule uses the same mechanism."
+      ],
+      "groups": [
+        [
+          "Air-preexposed control",
+          "48 h air → fixed rest → common challenge",
+          "Age/handling reference"
+        ],
+        [
+          "Ethanol-preexposed test",
+          "48 h nominal 16% → same rest → same challenge",
+          "Chronic history effect"
+        ],
+        [
+          "Each genetic control",
+          "Both histories in the same session",
+          "Background and construct effects"
+        ]
+      ],
+      "timeline": [
+        [
+          "Day 0–2",
+          "Continuous induction",
+          "48 h at the chosen source-mapped nominal low dose or air."
+        ],
+        [
+          "Day 2–3, 4 or 5",
+          "Rest",
+          "24, 48 or 72 h from induction cessation; use independently allocated cohorts."
+        ],
+        [
+          "After the selected rest",
+          "Acute challenge",
+          "Same LoRR challenge in the matched history groups."
+        ]
+      ],
+      "analysis": [
+        "For the source estimator, calculate challenge ST50 difference within the preassigned daily pairing. Do not pool all flies into a single curve and call fly count n.",
+        "For multiple genotypes/delays, model exposure history and genotype/delay with appropriate interactions and batch structure. Report raw challenge medians and the history effect, not only normalized tolerance."
+      ],
+      "modifications": [
+        {
+          "change": "Explicitly validate per-tube delivery and 48 h stability.",
+          "rationale": "Per-tube chronic flow is not numerically stated in the supplied Methods.",
+          "validation": "Commission and document it as local apparatus information."
+        },
+        {
+          "change": "Add 48 h and 72 h retention arms only as separate cohorts.",
+          "rationale": "This maps persistence without an extra challenge inducing tolerance.",
+          "validation": "Keep a matched air-history control at each age and delay."
+        },
+        {
+          "change": "Use a pilot-defined common challenge with a written cutoff.",
+          "rationale": "The supplied chronic paragraph does not independently enumerate its challenge setting.",
+          "validation": "State the setting and whether it is source-matched or locally adapted; use it in both histories."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, Methods p. 23 and Figs. 6–10: perforated 50 mL tubes, 5 mL food, nominal 16% vapor for 48 h, then 24–72 h rest. The Methods paragraph does not independently give a numerical challenge setting, exact adult age or per-tube chronic flow. Those must be specified in the local SOP rather than invented.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-repeated-published",
+      "title": "Run the published repeated-bout tolerance paradigm",
+      "summary": "Four daily 20-minute inebriating bouts, followed by a next-day challenge.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "Days 1–4 induction; day 5 challenge",
+      "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Matched cohorts with enough parallel vials for all histories",
+        "Validated vapor rig and same daily testing window",
+        "Fresh food, induction/survival log and final challenge setup"
+      ],
+      "parameters": [
+        [
+          "Published induction",
+          "Nominal 42% vapor, 20 min per day on days 1–4."
+        ],
+        [
+          "Source behavioral description",
+          "Inebriating but not sedating under the reported conditions; validate local outcomes instead of assuming a nominal number transfers."
+        ],
+        [
+          "Challenge",
+          "24 h after the final induction, using the same acute challenge for both histories."
+        ],
+        [
+          "Independent histories",
+          "Ethanol each induction versus air at the same daily times."
+        ],
+        [
+          "Do not substitute",
+          "10 min × 3 days is a different local schedule, documented on the separate template page."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Lock the five-day calendar",
+          "action": "Record the daily exposure start, end and planned challenge clock. Use equal adult age distributions across histories and genotypes.",
+          "why": "A skipped or shifted bout changes the regimen.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pilot the nominal setting",
+          "action": "Determine whether source-mapped nominal 42% for 20 min gives the intended inebriating, non-sedating range in the local apparatus.",
+          "why": "The paper’s descriptive effect is apparatus and background dependent.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Randomize daily history groups",
+          "action": "Assign each genotype to ethanol or humidified-air induction and balance channels. Keep history codes stable across all days.",
+          "why": "Mislabeling one day creates a mixed exposure history.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver one fixed bout daily",
+          "action": "Apply the same locked dose and 20 min duration to each ethanol cohort on days 1–4; handle air cohorts identically.",
+          "why": "Increasing duration as tolerance appears changes the training pattern.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record induction behavior and survival",
+          "action": "Document whether LoRR occurs, how recovery proceeds and how many flies remain after each bout. Avoid replacing lost flies.",
+          "why": "Replacement animals have a different history; differential mortality can select resistant survivors.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Return to matched fresh food",
+          "action": "Keep food, density and time to return matched, without additional anesthesia.",
+          "why": "Repeated handling and nutrition are part of the exposure history.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Wait 24 h after the fourth bout",
+          "action": "Use the explicitly chosen cessation-to-challenge clock and report it; do not merge it with the acute paper’s start-to-start label.",
+          "why": "Clock definitions must survive transfer between paradigms.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Challenge both histories together",
+          "action": "Use the common acute LoRR method with the same scoring action, spacing and cutoff.",
+          "why": "The effect of prior experience is evaluated at a matched challenge.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze the history contrast",
+          "action": "Calculate challenge ST50 by vial and compare ethanol-history with age-matched air-history controls. Plot day-wise survival alongside challenge resistance.",
+          "why": "Day 1 versus day 5 alone confounds aging, repeated handling and exposure.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Test preference separately if relevant",
+          "action": "Allocate parallel cohorts to CAFE or FRAPPÉ at their appropriate recovery intervals. Do not reuse flies after a tolerance challenge for a supposedly unchallenged preference test.",
+          "why": "The challenge itself is another ethanol experience.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Four days of matched air handling",
+        "Genetic controls under both histories",
+        "Induction behavior, recovery and survival",
+        "Separate preference cohorts if studying valence"
+      ],
+      "record": [
+        "Each bout’s dose, date and duration",
+        "Induction LoRR and recovery",
+        "Survival without replacement",
+        "Final rest clock",
+        "Challenge ST50 and cutoff status"
+      ],
+      "expected": "A tolerance estimate specific to the published repeated-bout pattern, together with a clear record of cumulative exposure and survival.",
+      "troubleshooting": [
+        {
+          "problem": "Local 20 min bouts cause extensive sedation",
+          "action": "Revisit apparatus mapping in a separate pilot; do not call a changed regimen identical to the paper."
+        },
+        {
+          "problem": "High variance on day 5",
+          "action": "Audit daily exposure completeness, age, density, food, circadian timing and mortality before increasing sample size."
+        }
+      ],
+      "sources": [
+        "rapid",
+        "larnerd2025"
+      ],
+      "related": [
+        "repeated-tolerance",
+        "ethanol-chronic-tolerance",
+        "ethanol-cafe-preference"
+      ],
+      "rationale": [
+        "Repeated intermittent exposure introduces multiple induction and recovery episodes. It can differ from both a single acute exposure and 48 h continuous low-dose exposure in behavior and molecular state.",
+        "The 2023 study reported that its repeated regimen produced tolerance but mild consumption aversion, whereas its acute and continuous histories promoted preference. Do not infer drinking preference directly from a larger ST50.",
+        "Age-matched air-preexposed flies are essential because the challenge takes place several days after the first treatment."
+      ],
+      "groups": [],
+      "timeline": [
+        [
+          "Days 1–4, fixed time",
+          "Induction",
+          "One 20 min source-mapped bout per day or matched air handling."
+        ],
+        [
+          "Between bouts",
+          "Recovery",
+          "Return to standard food and document health."
+        ],
+        [
+          "Day 5, +24 h from final bout",
+          "Challenge",
+          "Common LoRR challenge of the two histories."
+        ]
+      ],
+      "analysis": [
+        "Use a history × genotype analysis of the final challenge where appropriate. Show the final challenge distributions as well as any derived tolerance difference.",
+        "Interpret preference or aversion only from its own measured consumption or cue-choice assay; tolerance and preference can dissociate."
+      ],
+      "modifications": [
+        {
+          "change": "Use a fixed daily time and a complete induction log.",
+          "rationale": "Clock time and missed exposures can change reproducibility.",
+          "validation": "State how the source’s daily interval was operationalized."
+        },
+        {
+          "change": "Add a parallel intake/choice arm.",
+          "rationale": "The repeated paradigm may dissociate resistance from appetitive behavior.",
+          "validation": "Use new cohorts and identify the additional assay as a separate experiment."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd et al. (2023), Fig. 1 and Results: nominal 42% vapor for 20 min once per day for four days, followed by challenge 24 h later. This is different from the user’s three 10 min inductions and day-4 challenge.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-recovery",
+      "title": "Measure recovery after ethanol exposure",
+      "summary": "Separate return of righting, return of movement and survival from the induction endpoint.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "Acute exposure plus a prespecified washout series",
+      "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "A validated induction rig with a fast, documented air-only switch",
+        "Fresh standard food and a standardized transfer routine if transferring",
+        "Video/timer and recovery count sheet",
+        "Matched air-only groups and separate internal-ethanol samples if required"
+      ],
+      "parameters": [
+        [
+          "Flowing-rig named example",
+          "Discontinue ethanol, maintain humidified airflow, and assess righting every 5 min (FlyBar)."
+        ],
+        [
+          "Alternative published apparatus",
+          "Wen 2005 passive-vial recovery used 12 min induction and 2 min assessments of climbing/flying; the plug’s 100% is liquid stock, not a quantified gas dose."
+        ],
+        [
+          "Recovery zero",
+          "Time ethanol delivery ceases at the chamber, with any measured washout delay reported."
+        ],
+        [
+          "Recovery endpoint",
+          "Specify return of righting or climbing/flying; do not label both as the same R50."
+        ],
+        [
+          "Observation limit",
+          "Set in a pilot and include late survival; incomplete recovery remains a reported outcome."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose the induction estimand",
+          "action": "Use either a common fixed external exposure or a prospectively designed burden-matched induction, and state which. If one genotype received more ethanol time, retain that information.",
+          "why": "Recovery comparisons are conditional on how the animals were intoxicated.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Document the state at induction end",
+          "action": "Count LoRR, complete immobility, deaths and unaffected flies at the instant ethanol is discontinued.",
+          "why": "The denominator for a recovery fraction must be clear.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Start washout consistently",
+          "action": "For a flowing rig, switch to ethanol-free humidified air at the same total flow and record the switching/arrival times. Avoid disturbing only selected groups.",
+          "why": "An uncontrolled transfer or slow washout can dominate recovery time.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Score the chosen return endpoint",
+          "action": "For the FlyBar-derived righting design, assess on a fixed 5 min grid. A finer 2 min grid is an adaptation unless using the distinct Wen method.",
+          "why": "Assessment spacing and stimulus strength influence temporal precision.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record movement separately",
+          "action": "If limbs move before posture returns, retain that observation rather than declaring full recovery. Track falls or repeated righting failures if visible.",
+          "why": "Transient motion and sustained functional recovery are not equivalent.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Preserve nonrecovering animals in the record",
+          "action": "At the cutoff report the fraction not recovered and assess later survival on food. Do not delete them to produce an apparent R50.",
+          "why": "Excluding the most affected animals biases the recovery curve.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pair behavior with clearance where needed",
+          "action": "Use independent destructive cohorts at matched recovery times to measure internal ethanol.",
+          "why": "Fast behavioral recovery can result from faster clearance as well as neural resistance.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze with the correct risk set",
+          "action": "State whether percentage recovered is relative to all exposed flies or only those meeting the induction endpoint, and report both counts.",
+          "why": "These definitions yield different curves when initial sedation differs.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Air-switch control at equal total flow",
+        "Same genotype/background controls and matched induction rule",
+        "Internal-ethanol time course and later survival"
+      ],
+      "record": [
+        "Induction dose/duration",
+        "State at exposure end",
+        "Recovery-zero and washout delay",
+        "Recovery endpoint and denominator",
+        "Actual score times",
+        "R50 if observed and nonrecovery fraction"
+      ],
+      "expected": "A recovery profile conditional on the induction regimen, with movement, posture and survival kept distinct.",
+      "troubleshooting": [
+        {
+          "problem": "A genotype recovers slowly after also receiving a longer induction",
+          "action": "Report the duration difference and test a fixed-exposure comparison or a separate burden-matched design before assigning a clearance or circuit mechanism."
+        },
+        {
+          "problem": "Residual ethanol persists during the apparent recovery phase",
+          "action": "Verify physical washout and measure internal levels; air-switch time is not proof of drug clearance."
+        }
+      ],
+      "sources": [
+        "flybar",
+        "wen2005",
+        "endpoints"
+      ],
+      "related": [
+        "ethanol-sensitivity",
+        "ethanol-immobility",
+        "ethanol-internal-levels"
+      ],
+      "rationale": [
+        "Recovery is the reversal of a defined behavioral endpoint after exposure stops. Its speed depends on induction burden, clearance and nervous-system state, so it should not be used as a synonym for sensitivity.",
+        "A fixed-time induction and an induction continued until a target fraction is affected answer different questions. One standardizes external exposure; the other approximates a behavioral burden while changing duration.",
+        "Return of walking, return of righting and survival at a later time are different outcomes. A fly can regain movement before stable posture, or right itself but remain poorly coordinated."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Interpolate a recovery median only if 50% is bracketed for the defined denominator. Otherwise report the observed recovery fraction at the cutoff.",
+        "Use individual time-to-recovery analysis only if animals are actually individually tracked with a prespecified sustained-recovery definition; group counts alone are not independent individual event records."
+      ],
+      "modifications": [
+        {
+          "change": "Add a prespecified sustained-righting criterion and video audit.",
+          "rationale": "This can reduce false recovery from transient posture changes.",
+          "validation": "Label the duration criterion as a local adaptation and verify scorer agreement."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "FlyBar describes stopping ethanol while continuing humidified air and scoring righting recovery every 5 min. Wen 2005 used a different passive-vial method: 20 adult females, a 35 mL vial, 1 mL absolute ethanol on the plug, 12 min exposure, then a fresh plug and 2 min climbing/flying assessments. These are distinct source examples, not settings to combine.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-internal-levels",
+      "title": "Measure ethanol uptake and clearance",
+      "summary": "Use destructive analytical samples to separate external dose, internal burden and functional tolerance.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "Sampling series plus the selected analytical assay",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Independent matched cohorts for baseline, uptake, recovery and history conditions",
+        "Rapid consistent sample collection, labeled sealed tubes and a fixed cold-processing plan",
+        "Homogenization equipment, buffer, centrifuge and the selected enzymatic ethanol assay",
+        "Calibrated pipettes, compatible reader, ethanol standards and matrix/blank controls",
+        "Sample manifest with exact cessation-to-collection delay"
+      ],
+      "parameters": [
+        [
+          "Historical A340 sample",
+          "10 flies in 500 µL 50 mM Tris, pH 7.5; vortex, centrifuge 2 min, transfer supernatant. The excerpt does not establish a universal centrifuge force."
+        ],
+        [
+          "Historical A340 reaction",
+          "6 µL supernatant + 370 µL reagent; 10 min at 37°C; read 340 nm against standards."
+        ],
+        [
+          "Historical conversion caveat",
+          "The source used a 0.85 µL/fly hemolymph-volume assumption. That is not a direct hemolymph or brain measurement."
+        ],
+        [
+          "Independent alternative",
+          "Kang 2020 uses a different extraction/dilution and A570 assay with protein normalization. Do not combine its wavelength or calibration with the A340 recipe."
+        ],
+        [
+          "Proposed sampling grid",
+          "Baseline; a few prespecified uptake times spanning behavioral transition; recovery 0, 15, 30, 60 min plus the actual pre-E2 time. This grid is an adaptation, adjusted after a pilot."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose and lock the analytical method",
+          "action": "Select one compatible ethanol kit or validated analytical platform. Record catalog, lot, detection chemistry, wavelength, sample limits and calibration procedure.",
+          "why": "Historical A340 and modern colorimetric assays use different reactions and scaling.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Plan destructive cohorts",
+          "action": "Allocate independent vials for every genotype × history × sampling time. Include enough material for standards, blanks, spike recovery and technical repeats.",
+          "why": "Taking flies from the behavioral vial changes its N and exposure dynamics.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Validate the matrix",
+          "action": "Run buffer blanks, air-fly extracts, standards and a known ethanol spike added to a representative extract. Test dilution linearity.",
+          "why": "Pigment, protein, endogenous compounds and saturation can affect the signal.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver the matched exposure",
+          "action": "Use the same rig, cohort conditions and exposure-zero definition as the behavior experiment. Document whether sampling is at a fixed time or a behavioral endpoint.",
+          "why": "Sampling at each genotype’s ST50 is not the same as sampling after equal external exposure.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Collect promptly and consistently",
+          "action": "At the assigned time collect the entire predefined sample using a reproducible fast routine and sealed handling. Record the exact delay and any surface-liquid contamination.",
+          "why": "Ethanol is volatile; inconsistent handling can change the measured amount.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Extract according to the selected SOP",
+          "action": "For the named historical A340 example use its sample-to-buffer ratio; for a current kit use a validated extraction and clarification protocol. Avoid inventing missing centrifugation settings.",
+          "why": "Extraction recovery and dilution must be traceable to the analysis.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run standards with samples",
+          "action": "Use reagent and matrix controls in the same run, maintain the source or kit’s temperature/incubation timing, and keep signals within the verified calibration range.",
+          "why": "A standard curve from another batch or outside the linear range is not a valid conversion.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Back-calculate the quantity",
+          "action": "Apply all extraction and assay dilution factors. First report an amount per fly or per measured tissue/protein quantity; provide any tissue-volume assumption separately.",
+          "why": "Reaction-well concentration is not automatically body concentration.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Assess prechallenge clearance",
+          "action": "Compare the planned E2-time samples with appropriate baseline and detection limits. Document what “cleared” means for this assay.",
+          "why": "Rapid tolerance should not be explained by substantial residual ethanol at challenge.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Link results to behavior",
+          "action": "Present uptake/clearance curves next to the behavioral curves without claiming a neural effect if internal exposures differ.",
+          "why": "Pharmacokinetic and behavioral effects can coexist.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Buffer and reagent blanks",
+        "Air-fly matrix blank",
+        "Standard curve spanning the actual sample range",
+        "Spike recovery and dilution linearity",
+        "Independent biological vials plus identified technical repeats"
+      ],
+      "record": [
+        "N and sample type",
+        "Exposure and sample timestamps",
+        "Extraction volume and every dilution",
+        "Kit/reaction settings",
+        "Raw signal and calibration",
+        "Amount/fly or stated normalization",
+        "Detection limit and residual pre-E2 level"
+      ],
+      "expected": "A calibrated internal-exposure measurement with an honest tissue/normalization definition, supporting a distinction between exposure kinetics and behavioral plasticity.",
+      "troubleshooting": [
+        {
+          "problem": "All values exceed the highest standard",
+          "action": "Dilute representative samples within the verified matrix range and rerun with all dilution factors recorded; do not extrapolate a saturated response."
+        },
+        {
+          "problem": "Air controls give a large signal",
+          "action": "Check blank chemistry, background correction and matrix interference before interpreting apparent residual ethanol."
+        },
+        {
+          "problem": "Repeated technical wells disagree",
+          "action": "Check mixing, pipette calibration, sample volatility and reaction timing. Keep the biological sample identity intact."
+        }
+      ],
+      "sources": [
+        "troutwine2016",
+        "gprk2020",
+        "larnerd2025"
+      ],
+      "related": [
+        "ethanol-delivery",
+        "rapid-tolerance",
+        "ethanol-recovery",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "The same external vapor setting need not give the same internal ethanol in different genotypes or exposure histories. Measuring uptake and washout directly tests a major alternative explanation for sensitivity and tolerance.",
+        "These samples are destructive. Independent vials are needed for every time point; they are not repeated samples from the behavioral vial.",
+        "A whole-fly homogenate measures the extracted body sample, not a brain-specific concentration. A concentration inferred using an assumed fluid volume must be identified as an estimate."
+      ],
+      "groups": [
+        [
+          "Baseline air cohorts",
+          "Same genotype/age, no ethanol",
+          "Matrix and endogenous background"
+        ],
+        [
+          "Uptake cohorts",
+          "Fixed exposure, separate vial per time",
+          "Internal burden during intoxication"
+        ],
+        [
+          "Clearance cohorts",
+          "Fixed induction then washout, separate vial per time",
+          "Residual ethanol before challenge"
+        ],
+        [
+          "History cohorts",
+          "Naive and preexposed at the same sampling clocks",
+          "History-associated uptake/clearance differences"
+        ]
+      ],
+      "timeline": [],
+      "analysis": [
+        "If the assay reports ethanol concentration in the final reaction, convert to extracted amount using reaction-volume and sample-dilution factors before dividing by fly number. Verify the kit’s unit convention.",
+        "Technical wells from one homogenate do not increase biological n. Preserve sample/day identity and inspect the standard fit and residuals."
+      ],
+      "modifications": [
+        {
+          "change": "Replace an unavailable historical kit with a validated current assay.",
+          "rationale": "This makes the method practical while preserving the analytical question.",
+          "validation": "Revalidate blanks, spike recovery, linearity, dilution and detection range; do not copy historical conversion factors."
+        },
+        {
+          "change": "Report amount per fly before assuming a fluid volume.",
+          "rationale": "This avoids implying a measured brain/hemolymph concentration.",
+          "validation": "Provide actual fly counts and explicit normalization units."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Named historical example: Troutwine 2016 uses 10 flies, 500 µL 50 mM Tris pH 7.5, then 6 µL extract + 370 µL reagent for 10 min at 37°C and A340. The historical kit recipe is not interchangeable with a current A570 kit. Follow the selected kit’s validated instructions and matrix calibration.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-cafe-preference",
+      "title": "Measure voluntary ethanol intake with CAFE",
+      "summary": "An evaporation-corrected choice assay with total intake and nutritional controls.",
+      "category": "alcohol",
+      "module": "Intake, preference & reward",
+      "time": "One overnight choice or a prespecified multi-day design",
+      "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Ventilated CAFE chambers and secure 5 µL calibrated capillaries",
+        "Matched food base with 0% and a defined liquid ethanol % v/v",
+        "Separate empty-fly evaporation controls for each solution",
+        "Humidity-controlled conditions, meniscus-reading routine and positions log",
+        "Matched pre-exposed/air-history cohorts if studying acquired preference"
+      ],
+      "parameters": [
+        [
+          "2023 named example",
+          "Groups of eight genetically identical flies; 16 h recovery after vapor pre-exposure; overnight choice."
+        ],
+        [
+          "Solutions",
+          "Same liquid food base with 0% or 15% ethanol in that named example. Record exact base composition rather than assuming all CAFE papers use the same food."
+        ],
+        [
+          "Food-base example",
+          "Ja/related CAFE methods use 5% sucrose + 5% yeast extract; if adopting it locally label the base choice explicitly."
+        ],
+        [
+          "Capillaries",
+          "5 µL capillary tubes; record initial and final meniscus/volume."
+        ],
+        [
+          "Preference index",
+          "PI = (VE − V0)/(VE + V0), with solution-specific evaporation correction before the calculation."
+        ],
+        [
+          "Multi-day alternative",
+          "Published multi-day CAFE designs replace/read capillaries daily; define number of days, position swapping and a primary analysis day in advance."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose naive or experience-dependent preference",
+          "action": "For the 2023 vapor-history example assign ethanol or air pre-exposure and a 16 h recovery; for naive intake omit the priming manipulation and label the assay accordingly.",
+          "why": "The first ethanol experience can change later preference.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Prepare matched food solutions",
+          "action": "Make the same base food in both choices and add the selected ethanol concentration to one. Record final volume, stock concentration, freshness and storage.",
+          "why": "Changing sugar or yeast while adding ethanol introduces a nutritional alternative explanation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Load and check capillaries",
+          "action": "Use equal access, record initial menisci, reject leaking or air-blocked capillaries before starting, and balance left/right positions across chambers.",
+          "why": "Leaks and access asymmetry resemble consumption differences.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Set evaporation controls",
+          "action": "Run empty chambers with the same solution types, capillary arrangement and exposure duration in the same humidity/temperature environment.",
+          "why": "A generic water-only blank does not measure ethanol-food evaporation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Begin the defined choice period",
+          "action": "Transfer the planned eight-fly cohort for the named example, maintain food access throughout, and record N and survival without adding replacement flies.",
+          "why": "Intake and competition depend on cohort size and health.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Read intake on a fixed schedule",
+          "action": "For an overnight design record the actual start/end duration; for multi-day work read and replace at the same daily time and maintain the position plan.",
+          "why": "An “overnight” value from different durations is not directly comparable.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Correct each solution separately",
+          "action": "Subtract the matched empty-chamber loss from each measured volume loss. Preserve raw and corrected values and flag values consistent with noise.",
+          "why": "Negative corrected volumes are QC information, not values to silently truncate.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate PI and total intake",
+          "action": "Compute PI only when total corrected intake is positive and above a prespecified quantification threshold. Also report VE, V0 and total per chamber and, if appropriate, per surviving fly.",
+          "why": "A high PI without appreciable consumption is unstable.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Add nutritional and sensory controls",
+          "action": "Use prespecified calorie/taste controls where the research question requires a pharmacological interpretation. Document any balancing sugar and its sensory consequences.",
+          "why": "Calorie matching can itself alter palatability; one control does not solve every confound.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze chamber-level replicates",
+          "action": "Treat independent CAFE chambers as the exposure/consumption unit for grouped flies and repeated days as repeated observations.",
+          "why": "Eight flies sharing one set of capillaries do not provide eight independent consumption measurements.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Solution-specific empty-chamber evaporation",
+        "Counterbalanced capillary positions",
+        "Air-history and genetic controls where applicable",
+        "Total intake, survival and nutritional/sensory controls"
+      ],
+      "record": [
+        "Food recipes and ethanol v/v",
+        "Capillary positions",
+        "Raw menisci and blank loss",
+        "Corrected VE/V0 and total",
+        "PI and low-intake QC flags",
+        "Time, humidity and survival"
+      ],
+      "expected": "A measured preference for ethanol-containing food under the stated conditions. Preference alone does not prove intoxication, reward circuitry or dependence.",
+      "troubleshooting": [
+        {
+          "problem": "Very strong preference with negligible total intake",
+          "action": "Inspect the quantification threshold, starvation/health and evaporation; report low-intake samples according to a predefined rule."
+        },
+        {
+          "problem": "Different evaporation on two sides",
+          "action": "Balance positions and measure solution-specific blanks at the same locations; inspect leaks and airflow."
+        },
+        {
+          "problem": "CAFE and ST50 disagree",
+          "action": "Do not force agreement. Consumption and postural sensitivity are different phenotypes with different confounds."
+        }
+      ],
+      "sources": [
+        "rapid",
+        "cafe",
+        "devenini2009",
+        "pohl2012"
+      ],
+      "related": [
+        "ethanol-frappe",
+        "ethanol-conditioned-reward",
+        "ethanol-cross-paradigm"
+      ],
+      "rationale": [
+        "CAFE measures consumption from capillaries, rather than sedation or a cue-associated memory. Increased preference can arise from experience, taste, odor, calories or nutritional state.",
+        "Ethanol and water evaporate at different rates. Empty chambers containing each actual solution are necessary to estimate non-consumption loss.",
+        "The preference index omits the size of the meal. A fly cohort taking almost no food can have an extreme PI, so total corrected intake and survival must accompany it."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "PI ranges from −1 to +1 only for valid nonnegative corrected intakes; zero means equal choice and a zero denominator is undefined. Investigate blank-overcorrected negative intake rather than hiding it.",
+        "For repeated days, use a repeated-measures or mixed model with chamber identity, or a prespecified per-chamber summary. Do not select the most favorable day after seeing the data."
+      ],
+      "modifications": [
+        {
+          "change": "Use blinded meniscus reading or calibrated imaging.",
+          "rationale": "This reduces subjective reading error.",
+          "validation": "Check volumetric calibration and inter-reader agreement."
+        },
+        {
+          "change": "Add an isocaloric comparison and a total-intake outcome.",
+          "rationale": "This probes nutrition-related alternatives to reward.",
+          "validation": "Treat taste/texture changes from calorie balancing as additional variables, not perfect controls."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2023: eight flies, 16 h post-vapor recovery, 5 µL capillaries, food with or without 15% ethanol, overnight preference and empty-vial evaporation correction. Multi-day caloric-control designs are separate published variants; do not combine their duration/sex/age without reporting the adaptation.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-frappe",
+      "title": "Measure primed ethanol preference with FRAPPÉ",
+      "summary": "A short fluorescent intake assay with reciprocal dyes and instrument-specific calibration.",
+      "category": "alcohol",
+      "module": "Intake, preference & reward",
+      "time": "Priming day + overnight deprivation + 10–15 min choice",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Matched male fly cohorts and a validated priming exposure setup",
+        "0.7% agar holding medium and a documented deprivation schedule",
+        "60-well choice plates matching the source design",
+        "60 mM sucrose solutions with 0% or 15% ethanol",
+        "Rhodamine B and fluorescein sodium salt; separate stock/working-solution log",
+        "Dry-ice sample handling, 96-well reader plates and an appropriate dual-channel fluorescence reader"
+      ],
+      "parameters": [
+        [
+          "Published cohort",
+          "30 male w1118 Berlin flies, 1–5 days old at initiation, reared at 25°C and 70% RH in the source protocol."
+        ],
+        [
+          "Published priming example",
+          "20 min vapor pre-exposure at source E/A 80:70 versus mock 0:150, followed by recovery/food deprivation per the original schedule. E/A is instrument notation."
+        ],
+        [
+          "Choice",
+          "60 mM sucrose versus the same sucrose + 15% ethanol, 10–15 min."
+        ],
+        [
+          "Deprivation",
+          "14–18 h is described; the Methods sequence includes 4 h on food then 18 h on 0.7% agar. Lock the chosen clock."
+        ],
+        [
+          "Dyes",
+          "0.005% rhodamine B and 0.003% fluorescein sodium salt, with ethanol–dye pairing reversed on the counterbalanced plate. Confirm concentration conventions against the original reagent method."
+        ],
+        [
+          "Readout example",
+          "Individual body cores in 50 µL water per well; source excitation/emission pairs 542/591 nm and 485/527 nm."
+        ],
+        [
+          "Reader repeats",
+          "Source took five reads with shaking between and used maximum fluorescence. Validate any change to this optical routine."
+        ],
+        [
+          "Calibration",
+          "Source RFU multipliers 3.23 and 1.74 were empirically instrument-specific. Recalibrate; do not reuse these as universal nL/RFU factors."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Assign priming and control histories",
+          "action": "Use independent exposure vials with genotype and air/ethanol history coded before feeding. Record the same rearing and age conditions in each.",
+          "why": "Individual readouts do not remove the shared exposure history.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply the stated priming schedule",
+          "action": "Use the selected 20 min source-mapped priming dose or mock and then the locked food-recovery/deprivation schedule.",
+          "why": "Both prior ethanol and metabolic state affect consumption.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Prepare the two choices and reciprocal plates",
+          "action": "Make 60 mM sucrose with and without the selected 15% ethanol, with the source dye concentrations. Reverse the dye–ethanol pairing on a matched plate.",
+          "why": "Different fluorescence or dye palatability can otherwise masquerade as preference.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Validate fluorescence standards",
+          "action": "Build calibration curves for both labels in the relevant food/body matrix, quantify background and cross-channel bleed-through, and define the minimum detectable intake.",
+          "why": "RFU-to-volume conversion is specific to optics, gain and matrix.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run the short choice window",
+          "action": "Use one prespecified feeding duration inside the source 10–15 min window and the matching source plate geometry. Keep position and batch recorded.",
+          "why": "A 90 min plate assay allows different sampling, excretion and evaporation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Collect and prepare bodies consistently",
+          "action": "Follow the original frozen-body-core readout preparation, preserving the association of each measured body with its history group and plate. Use one preparation mode rather than mixing intact-core and homogenate calibration.",
+          "why": "Tissue orientation and cuticle absorbance affect the optical signal.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Read both fluorophores",
+          "action": "For the source-compatible optical example use the named wavelength pairs and its five-read/shake routine, or a separately validated local equivalent. Retain raw reads before selecting the prespecified summary.",
+          "why": "The source’s maximum-of-five statistic is different from an arbitrary post hoc maximum.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Convert to consumed volumes",
+          "action": "Apply the validated blank correction and dye-specific calibration to each fly. Reject or flag below-range measurements using a rule set before unblinding.",
+          "why": "Unequal channel sensitivity must be removed before computing preference.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate individual PI and total",
+          "action": "Use (VE − V0)/(VE + V0) for positive, quantified total intake and retain dye-pair assignment as a design factor.",
+          "why": "The denominator is unstable near the detection limit.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze nested replication",
+          "action": "Account for shared priming vial, plate and day when comparing individual measurements. Evaluate whether reciprocal dyes agree.",
+          "why": "A hundred flies from one priming vial do not replicate the exposure a hundred times.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Air-primed controls",
+        "Reciprocal dye–food pairing",
+        "Unfed/background bodies",
+        "Dye-specific standards, bleed-through and matrix checks",
+        "Plate position, total intake and survival"
+      ],
+      "record": [
+        "Priming E/A and timing",
+        "Recovery and deprivation clocks",
+        "Dye and food recipes",
+        "Individual body/plate/vial identity",
+        "Raw channels and calibration",
+        "Consumed volumes and PI",
+        "Low-intake flags"
+      ],
+      "expected": "A short-term intake preference after a defined ethanol history, subject to food-deprivation and fluorescence controls.",
+      "troubleshooting": [
+        {
+          "problem": "The two dye assignments give different results",
+          "action": "Inspect calibration, bleed-through, dye palatability and plate position. Keep both assignments visible rather than pooling away the discrepancy."
+        },
+        {
+          "problem": "Most flies show no measurable intake",
+          "action": "Check preparation, deprivation and detection thresholds in a separate pilot. Do not assign an arbitrary PI of zero to no-intake flies."
+        }
+      ],
+      "sources": [
+        "frappe2014"
+      ],
+      "related": [
+        "ethanol-cafe-preference",
+        "ethanol-conditioned-reward",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "FRAPPÉ measures short-window ingestion from two fluorescently labeled solutions after a defined priming history. It uses individual bodies for readout, while priming-vial and plate effects remain clustered.",
+        "A brief feeding window limits dye loss through excretion, but deprivation is itself a behavioral manipulation that must match across conditions.",
+        "Reciprocal dye assignments and calibration in the actual food/matrix prevent fluorescence efficiency from being mistaken for a food preference."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Retain the individual measurement while accounting for shared vial/plate exposure in uncertainty estimates. Show per-vial summaries alongside individual distributions.",
+        "Do not compare FRAPPÉ PI directly to a visual abdomen-color score from a longer assay without a validation bridge."
+      ],
+      "modifications": [
+        {
+          "change": "Adapt to an available plate geometry or reader.",
+          "rationale": "This can improve practical access.",
+          "validation": "Revalidate sampling opportunity, evaporation, fluorescence calibration and dye counterbalancing; label it a local adaptation."
+        },
+        {
+          "change": "Compare fed and deprived cohorts as a separate experiment.",
+          "rationale": "It tests whether deprivation gates the apparent preference.",
+          "validation": "Ensure intake remains quantifiable; do not simply extend the feeding window to compensate without validating excretion."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Peru y Colón de Portugal 2014, Methods. The recipe/wavelength examples below are source-specific. The historical RFU-to-volume multipliers are not transferable to a different plate reader. This is not the lab’s 72-well, 90 min colored-food optogenetic assay.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-conditioned-reward",
+      "title": "Measure ethanol-associated odor aversion and reward memory",
+      "summary": "Reciprocal odor pairing separates an acquired cue preference from innate odor choice.",
+      "category": "alcohol",
+      "module": "Intake, preference & reward",
+      "time": "Three training cycles; separate 30 min and 24 h tests",
+      "level": "Advanced",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Groups of 50 males, collected young and trained at 3–5 days for the named source example",
+        "Perforated training vials, 1% agar, validated odor/ethanol training chamber and captured exhaust",
+        "Two balanced odor stimuli and a separate drug-free Y-maze test",
+        "Reciprocal-pair identifiers, food for retention and a clocked training log"
+      ],
+      "parameters": [
+        [
+          "Source chamber example",
+          "Training vials 2.5 cm diameter × 9.5 cm high, 64 perforations and mesh lids."
+        ],
+        [
+          "Source vapor setting",
+          "95% liquid stock bubbled into E/A 80:70 instrument units; 100 U = 1.7 L/min in that apparatus, reported as 53% relative vapor. Not 53% liquid or measured gas v/v."
+        ],
+        [
+          "Source odor recipes",
+          "3 mL isoamyl alcohol 1:36 in mineral oil; alternative odor mixture 2 mL ethyl acetate 1:36 plus 1 mL acetic acid 1:400 in mineral oil. The source replaces odors daily."
+        ],
+        [
+          "Training",
+          "Three cycles: 10 min odor 1 alone, then 10 min odor 2 with ethanol; reciprocal group reverses odor identities."
+        ],
+        [
+          "Spacing boundary",
+          "Methods says 50 min spacing, narrative says one-hour sessions. Resolve the chosen start/end convention explicitly; the handbook does not invent a reconciled clock."
+        ],
+        [
+          "Test",
+          "2 min drug-free Y-maze choice, at a prespecified retention delay such as 30 min or 24 h."
+        ],
+        [
+          "CPI",
+          "Average the preference indexes of reciprocally trained groups; report the denominator and nonchoosers."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Confirm baseline odor and motor responses",
+          "action": "Before conditioning, establish that all genotypes can move, detect the chosen odors and make a drug-free Y-maze choice under the test conditions.",
+          "why": "An olfactory or motor defect can mimic impaired memory.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Define the complete training clock",
+          "action": "Write each odor-alone interval, odor+ethanol interval and rest interval, including whether spacing is end-to-start or onset-to-onset. If an operational 50 min rest is adopted, identify it as a stated local implementation of the source text.",
+          "why": "The source’s timing wording must not be converted into a falsely precise reproduction.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Prepare reciprocal groups",
+          "action": "Assign half of matched cohorts to odor A alone then B+ethanol, and the others to B alone then A+ethanol. Pair them by training chamber position/day.",
+          "why": "A one-sided training comparison is vulnerable to innate odor bias.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Balance vapor and odor delivery",
+          "action": "Use validated delivery, odor freshness and flow conditions. The source’s E/A units and total-flow convention belong to its chamber, not an arbitrary local bubbler ratio.",
+          "why": "Odor strength and ethanol timing shape the association.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run the three locked cycles",
+          "action": "Deliver the 10 min odor-alone and 10 min odor+ethanol sequence with the prescribed resting conditions. Keep a complete event log.",
+          "why": "A different order or number of pairings can change valence and memory strength.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Provide food during retention",
+          "action": "Return flies to the source-compatible food arrangement and avoid unintended deprivation. Allocate distinct cohorts for the 30 min and 24 h tests.",
+          "why": "Hunger and a first memory test can alter a later test.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run the drug-free test",
+          "action": "Present both odors in the Y-maze for the fixed 2 min source example and counterbalance arms. Count paired-odor, unpaired-odor and nonchoosing flies.",
+          "why": "Continued ethanol during testing would mix memory retrieval with acute drug effects.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calculate the reciprocal index",
+          "action": "For each group calculate the predefined PI, then average the reciprocal group PIs to obtain a paired CPI. Retain the underlying counts.",
+          "why": "The reciprocal pair, rather than each fly counted within a group, is the relevant conditioning unit.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Compare against temporal controls",
+          "action": "Include unpaired or odor-only/ethanol-only controls as appropriate and show how much of the effect depends on temporal pairing.",
+          "why": "Exposure-induced motor or sensory changes are not equivalent to associative memory.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Interpret valence at its specific delay",
+          "action": "Call negative short-delay choice aversion and positive delayed choice conditioned preference when supported by controls. Avoid equating it with drinking or a diagnosis of addiction.",
+          "why": "One assay captures one component of ethanol-related behavior.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Reciprocal odor–ethanol assignments",
+        "Innate odor preference and odor detection",
+        "Unpaired odor/ethanol timing controls",
+        "Odor-only and ethanol-only controls where relevant",
+        "Drug-free motor/choice competence and arm counterbalancing"
+      ],
+      "record": [
+        "All odor and ethanol start/end clocks",
+        "Actual rest intervals",
+        "Odor recipes and freshness",
+        "Reciprocal pair and chamber position",
+        "Retention food/delay",
+        "Paired/unpaired/nonchoosing counts",
+        "PI/CPI denominator"
+      ],
+      "expected": "Evidence for learned avoidance or approach toward an ethanol-associated odor at the chosen delay, separable from innate preference and acute intoxication.",
+      "troubleshooting": [
+        {
+          "problem": "Strong choice before any training",
+          "action": "Rebalance odor intensity or select another validated odor pair, and keep reciprocal assignments."
+        },
+        {
+          "problem": "Almost no flies enter either arm",
+          "action": "Check motor function, retention health, airflow and apparatus before concluding that memory is absent."
+        },
+        {
+          "problem": "Thirty-minute and 24-hour results have opposite signs",
+          "action": "This can be consistent with distinct time-dependent valence. Report both delays and avoid averaging them into one memory value."
+        }
+      ],
+      "sources": [
+        "kaun2011",
+        "cue2018"
+      ],
+      "related": [
+        "ethanol-cafe-preference",
+        "ethanol-frappe",
+        "ethanol-paper-circuits"
+      ],
+      "rationale": [
+        "The outcome is preference for an odor previously associated with ethanol, tested without ethanol. It is not voluntary ethanol consumption and not an ST50 tolerance measurement.",
+        "The same training can produce short-delay aversion and later appetitive memory. Test delay is therefore part of the biological question, not a minor scheduling detail.",
+        "Reciprocal pairing controls inherent odor preference; unpaired odor/ethanol controls test whether temporal association, rather than exposure alone, is responsible."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "With the source denominator, PI = (Npaired − Nunpaired)/Ntotal; retain nonchoosers and specify whether Ntotal is all tested animals. Other denominator conventions are different estimators.",
+        "Average the reciprocal groups as prespecified, and analyze independent reciprocal pairs/days. Test memory against the appropriate unpaired or naive control rather than only against zero."
+      ],
+      "modifications": [
+        {
+          "change": "Use a simpler odor set or a different training chamber.",
+          "rationale": "This may fit the local facility.",
+          "validation": "Revalidate innate preferences, detection, vapor arrival, conditioning dynamic range and temporal pairing; label as an adaptation."
+        },
+        {
+          "change": "Explicitly resolve the interval clock before running.",
+          "rationale": "The narrative and Methods use different spacing language.",
+          "validation": "Preserve the chosen actual timing in a table so it can be reproduced."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Kaun 2011, conditioned odor preference Methods: 50 males, training at 3–5 days, three cycles of 10 min odor 1 then 10 min odor 2 + ethanol, reciprocal assignment, 2 min Y-maze choice. Methods describes 50 min spacing while the narrative describes hourly sessions; document the actual onset/end clocks rather than silently assuming an identical schedule.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-hyperactivity",
+      "title": "Measure ethanol startle, hyperactivity and motor depression",
+      "summary": "Use a time-resolved activity assay to separate early stimulation from later postural failure.",
+      "category": "alcohol",
+      "module": "Exposure & endpoints",
+      "time": "20 min acclimation + 20 min recorded sequence",
+      "level": "Intermediate",
+      "kind": "Source-guided workflow",
+      "checked": "2026-11-18",
+      "materials": [
+        "Four-chamber activity arena or a separately validated substitute",
+        "Controlled 1:1 nominal ethanol/water branch mixture and matched air-only switching",
+        "Overhead video, stable dim lighting, tracking configuration and event timestamps",
+        "Matched male cohorts, baseline motor checks and end-of-exposure LoRR scoring"
+      ],
+      "parameters": [
+        [
+          "Source group",
+          "10 males per chamber; four chambers in the named setup."
+        ],
+        [
+          "Acclimation",
+          "20 min with 125 mL/min air per chamber."
+        ],
+        [
+          "Recorded schedule",
+          "5 min air baseline; 10 min E/A 1:1; 5 min air washout."
+        ],
+        [
+          "Video and bins",
+          "30 frames/s; source activity averaged in 10 s bins."
+        ],
+        [
+          "Endpoints",
+          "Fraction/number active through time plus explicit postural scoring at the end."
+        ],
+        [
+          "Analysis window",
+          "Choose baseline, onset/startle and sustained-stimulation windows prospectively. The source used a four-minute plateau summary."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Validate tracking before ethanol",
+          "action": "Check detection with stationary flies, walking flies, reflections, overlapping animals and an empty arena. Keep the tracking threshold fixed after the pilot.",
+          "why": "Optical artifacts can mimic a change in active-fly fraction.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Load balanced independent groups",
+          "action": "Use the named ten-male groups or a clearly reported density adaptation. Randomize genotype/history across chamber positions.",
+          "why": "Density and wall/arena effects change movement.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Acclimate under air",
+          "action": "Use the source 20 min acclimation at the matched chamber flow, documenting temperature and lighting.",
+          "why": "Loading-related exploration should not be the ethanol baseline.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record a 5 min baseline",
+          "action": "Start video before any ethanol switch and retain enough data to quantify each group’s baseline.",
+          "why": "A genotype with high baseline activity may show a smaller fold increase despite a larger absolute activity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver the 10 min mixture",
+          "action": "Use the stated 1:1 nominal branch mixture in a commissioned rig, with event timestamps and equal total flow.",
+          "why": "Concentration and switching mechanics need to be distinguished.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Wash out for 5 min",
+          "action": "Continue air at the same chamber flow and retain the recovery activity trace.",
+          "why": "Washout is an additional dynamic phase, not data to discard.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Score posture explicitly",
+          "action": "At the prespecified point assess LoRR separately from automated activity and note trapping or grooming.",
+          "why": "Nonmovement is not a unique sedation classifier.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze the defined windows",
+          "action": "Bin at the chosen interval, retain each chamber’s full trace, and compute predeclared baseline, startle, sustained and washout summaries.",
+          "why": "Selecting the largest post hoc peak inflates apparent effects.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Compare with air-switch controls",
+          "action": "Use the same mechanical switching in a no-ethanol run.",
+          "why": "An immediate movement burst may be a delivery/startle response rather than sustained pharmacological stimulation.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Air-only sham switch",
+        "Baseline locomotor competence",
+        "Chamber-position randomization",
+        "Explicit LoRR check and tracking QC"
+      ],
+      "record": [
+        "Chamber and N",
+        "Acclimation and baseline conditions",
+        "Flow and switching times",
+        "Frame rate and tracking version",
+        "Window definitions",
+        "Activity trace and LoRR"
+      ],
+      "expected": "A time-resolved stimulation/depression phenotype with a separate postural endpoint, useful alongside sensitivity and tolerance tests.",
+      "troubleshooting": [
+        {
+          "problem": "Only a brief onset spike changes",
+          "action": "Inspect air-switch controls, odor onset and the sustained window before interpreting the change as altered intoxication."
+        },
+        {
+          "problem": "Late tracking activity is zero",
+          "action": "Review the video for posture, focus, lighting and trapping; do not automatically assign all animals as LoRR."
+        }
+      ],
+      "sources": [
+        "gprk2020"
+      ],
+      "related": [
+        "ethanol-sensitivity",
+        "ethanol-recovery",
+        "ethanol-circuit-timing"
+      ],
+      "rationale": [
+        "A brief odor/startle peak at ethanol onset and a delayed sustained increase in activity can have different causes. A long average across them hides this structure.",
+        "Declining movement later in the run may represent standing, grooming, incoordination or sedation. Activity pixels alone do not establish LoRR.",
+        "Groups sharing an arena and exposure are clustered. Frames and ten-second bins are repeated measurements of the same group, not independent biological samples."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Use chamber-level summaries or a longitudinal model accounting for repeated bins within chamber. Do not make n equal to frame count.",
+        "Report absolute activity and baseline-adjusted effects when baseline differs; explain the normalization denominator."
+      ],
+      "modifications": [
+        {
+          "change": "Use a different camera or arena.",
+          "rationale": "This may be necessary locally.",
+          "validation": "Recalibrate scale, tracking, density, flow and onset timing; keep a reference cohort."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Named FlyGrAM implementation in Kang 2020: four groups of 10 males, 20 min acclimation at 125 mL/min/chamber, 30 fps, then 5 min air → 10 min E/A 1:1 → 5 min air, analyzed in 10 s bins. This is separate from its 250 mL/min-vial LoRR assay.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-circuit-timing",
+      "title": "Map acquisition, retention and expression with timed neural perturbation",
+      "summary": "A source-grounded phase design with temperature and genotype controls.",
+      "category": "alcohol",
+      "module": "Circuits & follow-up experiments",
+      "time": "A complete 4 h, 24 h or 48 h + rest paradigm",
+      "level": "Advanced",
+      "kind": "Planning guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "Verified driver × effector progeny and matched single-transgene/background controls",
+        "Validated temperature-controlled exposure and holding chambers",
+        "Temperature logger near flies, fixed transfer routine and dose checks at each temperature",
+        "Parallel cohorts for every phase window and permissive-temperature control",
+        "Reporter/anatomical validation and baseline motor assessment"
+      ],
+      "parameters": [
+        [
+          "Source temperature labels",
+          "18°C permissive versus 29°C restrictive for the Shibirets schedules shown in Figs. 4 and 7."
+        ],
+        [
+          "Rapid phases",
+          "E1 acquisition; inter-exposure interval; E2 expression, using either the four-hour or 24-hour acute schedule."
+        ],
+        [
+          "Chronic phases",
+          "48 h induction; 24 h retention example; final challenge."
+        ],
+        [
+          "Unspecified transitions",
+          "Measure local warming/cooling and verify functional onset/reversibility. Do not invent a universal 15 or 30 min lead time."
+        ],
+        [
+          "Adult-specific expression",
+          "Thermogenetic crosses were raised at 18°C in the paper. Adult expression/temperature histories must be specified for the actual construct."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose a precise phase hypothesis",
+          "action": "Name acquisition, inter-exposure retention or challenge expression, and select the corresponding validated behavioral paradigm.",
+          "why": "“The neuron controls tolerance” is too broad to determine a timing schedule.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Verify expression and function",
+          "action": "Confirm the intended cell pattern and perturbation effectiveness in an independent validation. Keep developmental history documented.",
+          "why": "A driver name alone does not establish cell-type specificity or functional silencing.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Create matched temporal cohorts",
+          "action": "Allocate separate cohorts for E1-only, interval-only, E2-only and any whole-paradigm perturbation. Include every genetic control in each schedule.",
+          "why": "A temperature main effect can resemble a phase-specific neural requirement.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Measure thermal transitions",
+          "action": "Log the temperature experienced near the flies and validate the required lead/lag for the exact effector. Recheck vapor dose at the different rig temperatures.",
+          "why": "Incubator setpoint does not guarantee immediate fly or gas equilibration.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply the locked schedule",
+          "action": "Run the behavior with the predetermined phase-specific temperature window, keeping all transfers matched and timestamps recorded.",
+          "why": "Moving a transition to accommodate a result invalidates the temporal hypothesis.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Measure acute performance",
+          "action": "Retain E1 sensitivity, baseline movement and challenge behavior alongside tolerance.",
+          "why": "A perturbation during E2 may prevent motor expression without affecting the stored adaptation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Use an independent anatomical test",
+          "action": "Where available, compare another driver, a subtractive GAL80 pattern or an adult-specific genetic design.",
+          "why": "The paper used converging APL evidence; one broad driver can include other cells.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Interpret phase specificity with controls",
+          "action": "Ask whether the experimental cross differs from both relevant single-transgene controls under the same schedule, and whether the permissive condition supports normal performance.",
+          "why": "A statistical difference from only one mismatched background is weak evidence of a targeted effect.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Every temperature schedule in driver-only and responder-only groups",
+        "Permissive-temperature reference",
+        "Same ethanol history and motor/survival checks",
+        "Anatomical and functional validation"
+      ],
+      "record": [
+        "Full genotype and stock IDs",
+        "Developmental/adult temperature history",
+        "Measured temperature transitions",
+        "E1/interval/E2 perturbation clocks",
+        "All dose metadata at each temperature",
+        "Sensitivity and tolerance separately"
+      ],
+      "expected": "A phase-specific causal test conditional on expression, efficacy and temperature controls, not a direct measurement of memory storage.",
+      "troubleshooting": [
+        {
+          "problem": "All restrictive-temperature controls change",
+          "action": "Check heat effects and vapor delivery; analyze targeted effects relative to identically treated controls, not a room-temperature reference alone."
+        },
+        {
+          "problem": "Only E2 perturbation changes tolerance",
+          "action": "Examine acute sensitivity and motor capacity at E2 before interpreting an expression/storage mechanism."
+        }
+      ],
+      "sources": [
+        "larnerd2025"
+      ],
+      "related": [
+        "ethanol-paper-circuits",
+        "ethanol-optogenetics",
+        "rapid-tolerance",
+        "ethanol-chronic-tolerance"
+      ],
+      "rationale": [
+        "Disrupting a neuron during E1 asks whether its function contributes to induction/acquisition. Disruption during the intervening interval asks about retention-related processes; disruption during E2 asks about expression or acute performance.",
+        "Temperature changes both neural perturbation and ethanol physiology/delivery. Driver-only and responder-only flies undergoing the same temperature schedule are essential.",
+        "Blocking synaptic recycling with Shibirets is not equivalent to suppressing all neural activity, and a rapid Shibirets shift is not the same as turning an RNAi transgene on through GAL80ts."
+      ],
+      "groups": [
+        [
+          "Driver > effector",
+          "Each temporal window plus permissive reference",
+          "Targeted perturbation"
+        ],
+        [
+          "Driver only",
+          "Identical temperature histories and ethanol histories",
+          "Driver/temperature control"
+        ],
+        [
+          "Responder only",
+          "Identical histories",
+          "Responder/temperature control"
+        ],
+        [
+          "Background/reference cohort",
+          "Matched rig temperatures",
+          "Delivery and general physiology control"
+        ]
+      ],
+      "timeline": [],
+      "analysis": [
+        "Use a prespecified genotype × temporal-window comparison with batch effects accounted for. If multiple controls are required, test the experimental cross against each relevant control.",
+        "Interpret a null effect with its uncertainty and perturbation validation; it does not prove that the neurons are dispensable under every condition."
+      ],
+      "modifications": [
+        {
+          "change": "Replace thermogenetic timing with an optogenetic window.",
+          "rationale": "This can offer a different perturbation timescale and avoid thermal changes.",
+          "validation": "Validate light delivery, actuator function, motor confounds and light-only controls; it is a new causal experiment, not a direct replication."
+        },
+        {
+          "change": "Use adult-specific RNAi to distinguish developmental from adult requirement.",
+          "rationale": "Constitutive gene effects can alter baseline sensitivity through development.",
+          "validation": "Determine expression kinetics and verify knockdown; GAL80ts should not be treated as a minute-scale switch."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, Figs. 4 and 7: Shibirets experiments depict 18°C (release permissive) and 29°C (release blocked). The figure schedules identify the target phase; exact tissue equilibration and transition lead times are not fully specified in the Methods and must be measured/reported locally. GAL80ts transcriptional control is a separate, slower mechanism.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-optogenetics",
+      "title": "Combine optogenetics with alcohol sensitivity or tolerance",
+      "summary": "A factorial light × actuator × retinal design that preserves the alcohol endpoint.",
+      "category": "alcohol",
+      "module": "Circuits & follow-up experiments",
+      "time": "Retinal feeding and pilot validation, then a defined alcohol paradigm",
+      "level": "Advanced",
+      "kind": "Lab-adapted template",
+      "checked": "2026-11-18",
+      "materials": [
+        "Verified experimental progeny plus matched driver-only and responder-only controls",
+        "ATR and its matched solvent-vehicle food, protected/handled according to the chosen reagent SOP",
+        "Calibrated illumination at the fly position with wavelength, irradiance and temperature measurements",
+        "Validated ethanol rig, video, timers and baseline righting/locomotion checks",
+        "Cohorts assigned to light/dark and prior-exposure histories"
+      ],
+      "parameters": [
+        [
+          "Local retinal example",
+          "1 mM ATR for 48 h has been used in this lab context; label it local and confirm activity/health for the actual stock."
+        ],
+        [
+          "Light",
+          "Record wavelength, bandwidth, irradiance at flies, duty cycle, start/end and chamber heating; no universal green/red intensity is assumed."
+        ],
+        [
+          "Vehicle",
+          "Match the final ATR solvent concentration in vehicle food and record it; retinal stock concentration is not final food concentration."
+        ],
+        [
+          "Genetics",
+          "GAL4 > UAS and LexA > LexAop are separate matched systems; record the full F1 genotype."
+        ],
+        [
+          "Behavioral endpoint",
+          "LoRR and complete immobility remain separate, with unchanged definitions and fixed exposure rules."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Write the temporal causal question",
+          "action": "Choose illumination during baseline, E1, the retention interval or E2, and allocate separate cohorts when different histories are needed.",
+          "why": "A whole-assay illumination cannot locate the phase of action.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Verify the cross and reporter",
+          "action": "Confirm driver/responder compatibility, balancer exclusion and the intended neural pattern before the main experiment.",
+          "why": "A mislabeled F1 genotype can create an apparent absence of biological effect.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Match retinal and vehicle food",
+          "action": "Prepare the locally validated ATR condition and an otherwise identical vehicle control, documenting the final solvent and feeding duration.",
+          "why": "Retinal feeding and solvent exposure are experimental treatments.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Calibrate optical delivery",
+          "action": "Measure the actual wavelength, irradiance and uniformity at each fly chamber. Check temperature with light on and off.",
+          "why": "The LED’s power label does not state what reaches the flies.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Validate actuator and baseline effects",
+          "action": "In separate cohorts demonstrate a useful actuator response and measure righting/locomotion without ethanol under the same light.",
+          "why": "Inhibition can impair motor performance independently of drug sensitivity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run matched factorial groups",
+          "action": "Include ATR/vehicle, light/dark and relevant genetic controls under the same ethanol and air histories. Prioritize a feasible prespecified factorial design rather than omitting all light-only controls.",
+          "why": "Retinal dependence alone does not remove light or genetic-background confounds.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver the chosen alcohol schedule",
+          "action": "Keep external dose, endpoint score grid and cutoff fixed. Log light changes on the same clock as vapor events.",
+          "why": "Different light timing or heat can change both delivered dose and behavior.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Score blinded video",
+          "action": "Use the same righting and movement definitions even if an actuator changes posture. Retain raw data when the endpoint becomes uninterpretable.",
+          "why": "A silenced fly failing to right itself before ethanol cannot yield a clean drug-sensitivity ST50.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze interaction and timing",
+          "action": "Compare the actuator-specific light effect with the matched controls, and show baseline motor behavior, acute sensitivity and tolerance separately.",
+          "why": "A main light or ATR effect is not sufficient evidence of circuit-specific alcohol modulation.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Driver-only, responder-only and background controls",
+        "ATR and matched vehicle",
+        "Light and dark at matched temperature",
+        "Air-only baseline righting and locomotion",
+        "Actuator efficacy and optical uniformity"
+      ],
+      "record": [
+        "Full F1 genotype",
+        "ATR/vehicle final concentrations and feeding",
+        "Wavelength/irradiance/duty cycle",
+        "Light-vapor event log",
+        "Baseline motor response",
+        "Both endpoints and survival"
+      ],
+      "expected": "A controlled test of circuit perturbation during a defined alcohol phase, with baseline motor and optical confounds explicitly evaluated.",
+      "troubleshooting": [
+        {
+          "problem": "ATR plus light causes LoRR before ethanol",
+          "action": "The chosen endpoint is confounded. Reduce/revalidate the perturbation in a new pilot or use a readout that remains interpretable."
+        },
+        {
+          "problem": "Vehicle and ATR groups differ in the dark",
+          "action": "Check food, solvent, expression, health and light leakage; do not attribute the difference automatically to acute actuator function."
+        }
+      ],
+      "sources": [
+        "gtacr",
+        "chrm",
+        "larnerd2025"
+      ],
+      "related": [
+        "ethanol-circuit-timing",
+        "ethanol-sensitivity",
+        "gtacr1",
+        "cschrimson"
+      ],
+      "rationale": [
+        "An actuator can alter baseline movement or the righting response directly. A change in ST50 during illumination may therefore reflect the ability to express the behavioral endpoint as well as altered ethanol action.",
+        "GtACR1 inhibition, CsChrimson activation and a GAL4 versus LexA driver are different genetic/optical systems. Verify the actual responder, driver compatibility and action spectrum.",
+        "Temporal windows can test induction, retention or expression, but the added light, ATR vehicle and heating must be controlled in each history."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "A planned genotype × light × retinal or equivalent controlled contrast is more informative than comparing only one ATR-fed group to one vehicle group. Account for exposure history when measuring tolerance.",
+        "If light changes pre-ethanol righting, report the confound and select an alternative validated readout rather than calling the pre-existing motor deficit ethanol hypersensitivity."
+      ],
+      "modifications": [
+        {
+          "change": "Restrict illumination to the induction phase.",
+          "rationale": "This can separate acquisition effects from direct motor effects during the challenge.",
+          "validation": "Confirm actuator recovery and carryover before E2."
+        },
+        {
+          "change": "Use independent actuator directions or a second driver.",
+          "rationale": "Converging activation/inhibition and anatomical tests strengthen causal interpretation.",
+          "validation": "Validate each actuator independently; opposite outcomes are not guaranteed."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "This is an experimental-design adaptation, not an optogenetic alcohol protocol reported in the supplied 2025 paper. The lab’s example of 1 mM ATR feeding for 48 h is a local starting condition requiring stock/actuator validation; wavelength and irradiance must come from the actual actuator and apparatus.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-calcium-imaging",
+      "title": "Record ethanol responses with GCaMP",
+      "summary": "A controlled stimulus and analysis plan for EB or mushroom-body preparations.",
+      "category": "alcohol",
+      "module": "Circuits & follow-up experiments",
+      "time": "One imaging session plus independent preparation replicates",
+      "level": "Advanced",
+      "kind": "Lab-adapted template",
+      "checked": "2026-11-18",
+      "materials": [
+        "Verified driver > GCaMP progeny, age/sex and genotype controls",
+        "Validated dissection saline, brain preparation and stable imaging chamber",
+        "Controlled perfusion/bath application, matched vehicle and washout",
+        "Microscope with nonsaturating acquisition, synchronized events and raw-movie storage",
+        "Prespecified ROIs, background region, baseline rule and preparation-level metadata"
+      ],
+      "parameters": [
+        [
+          "Saline",
+          "Use the exact preparation-validated composition, pH, calcium and temperature. The paper supplies no universal AHL recipe for this experiment."
+        ],
+        [
+          "Bath concentration",
+          "Record actual final ethanol % v/v or molarity, stock and final chamber volume. A previously considered 0.1% bath condition is a local pilot, not the 2025 behavioral dose."
+        ],
+        [
+          "Delivery timing",
+          "Record valve onset, measured tissue-arrival delay, stimulus duration and washout."
+        ],
+        [
+          "Acquisition",
+          "Record reporter, excitation, exposure, gain, frame rate, optical plane and saturation fraction."
+        ],
+        [
+          "Baseline",
+          "Define F0 and background subtraction before comparing traces; preserve raw fluorescence."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Verify expression and the region",
+          "action": "Confirm reporter inheritance and identify EB/MB regions before allocating the main cohorts. Record the exact genotype and preparation age.",
+          "why": "Missing or off-target expression is not evidence that ethanol has no circuit effect.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Stabilize the preparation",
+          "action": "Use the validated dissection/mounting procedure and reject unhealthy or mechanically compressed tissue by prespecified criteria.",
+          "why": "Tissue deterioration can produce long baseline changes that mimic stimulation.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pilot a nondestructive stimulus range",
+          "action": "Test candidate bath doses with matched vehicle, health and washout checks in independent preparations. Label the concentration series as a pilot.",
+          "why": "A behaviorally intoxicating vapor label does not determine a safe or useful ex vivo dose.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Set fixed acquisition conditions",
+          "action": "Avoid clipped signals and hold gain/exposure/optical plane constant across the planned comparison where feasible.",
+          "why": "A clipped peak cannot be recovered by ΔF/F normalization.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record baseline and vehicle",
+          "action": "Acquire a stable prestimulus baseline and an equivalent fluid-delivery control with identical volume and flow changes.",
+          "why": "Mechanical motion and dilution of saline can resemble an ethanol response.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply ethanol with synchronized timestamps",
+          "action": "Document stock, final volume, mixing and arrival delay; monitor any focus shift or tissue movement during delivery.",
+          "why": "The response should align with the stimulus actually reaching tissue.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Record washout and a health check",
+          "action": "Continue long enough to assess reversibility or drift under the locked observation plan and use a preparation-appropriate response/viability check.",
+          "why": "A persistent loss of fluorescence can indicate tissue injury or bleaching.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze blinded ROIs",
+          "action": "Use predetermined anatomical ROIs, background subtraction and an F0 rule. Inspect motion-corrected and raw movies and record exclusions before group labels are revealed.",
+          "why": "Selecting only bright responding pixels after seeing the stimulus biases the response.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Summarize per brain",
+          "action": "Report baseline, response amplitude, latency, integral and recovery as appropriate, retaining individual-brain traces and repeated stimuli within brain.",
+          "why": "Pixels, frames and ROIs from one brain are not independent brains.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Link to a separate behavioral experiment",
+          "action": "Test the same genetic manipulation with a controlled alcohol paradigm if proposing causal relevance.",
+          "why": "Correlation of fluorescence and behavior is insufficient to identify a tolerance mechanism.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Vehicle volume/flow control",
+        "Time-matched no-stimulus recordings",
+        "Reporter and genetic controls",
+        "Motion, bleaching and tissue-health checks",
+        "Independent brains and randomized acquisition order"
+      ],
+      "record": [
+        "Brain/preparation ID and genotype",
+        "Saline, pH, calcium and temperature",
+        "Actual bath dose and delivery delay",
+        "Raw movie/acquisition settings",
+        "ROI/background/F0 rules",
+        "Per-brain response and exclusions"
+      ],
+      "expected": "A stimulus-linked fluorescence response, or a well-documented null response, separated from perfusion artifacts and drift. It is not by itself evidence of consciousness or causal memory storage.",
+      "troubleshooting": [
+        {
+          "problem": "Vehicle produces the same ring progression",
+          "action": "Investigate perfusion movement, optical section, bleaching and spontaneous dynamics before interpreting ethanol specificity."
+        },
+        {
+          "problem": "Baseline drifts for an hour before stimulus",
+          "action": "Assess preparation health and acquisition stability; a short stimulus-related claim requires a stable, comparable baseline."
+        }
+      ],
+      "sources": [
+        "imaging",
+        "larnerd2025",
+        "gprk2020"
+      ],
+      "related": [
+        "calcium-imaging",
+        "dff-analysis",
+        "adult-brain-dissection",
+        "ethanol-optogenetics"
+      ],
+      "rationale": [
+        "Direct bath ethanol concentration in an isolated brain is not the same quantity as a vapor designation or an internal whole-fly measurement. Similar numbers in percent units are not transferable doses.",
+        "A changing ring-shaped fluorescence pattern can arise from spontaneous dynamics, tissue drift, bleaching or changing optical section as well as a stimulus response. Vehicle and time-matched controls are necessary.",
+        "Imaging can reveal a circuit-correlated response, but a fluorescence change alone does not show that the circuit causes behavioral tolerance."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "ΔF/F0 = (Fcorrected − F0)/F0, where the correction and baseline window are declared. A drifting baseline requires inspection, not automatic selection of a more favorable F0.",
+        "Use brain-level inference or a hierarchical model for repeated ROIs/stimuli. Report how negative or near-zero baseline values were handled after background subtraction."
+      ],
+      "modifications": [
+        {
+          "change": "Use the lab’s 0.1% ethanol bath condition as a starting pilot only.",
+          "rationale": "It provides a concrete local hypothesis without pretending to reproduce vapor exposure.",
+          "validation": "Verify final concentration, solution stability, health, reproducibility and vehicle effects."
+        },
+        {
+          "change": "Analyze outer and inner EB regions separately using fixed masks.",
+          "rationale": "This tests the observed spatial sequence without defining ROIs around a desired response.",
+          "validation": "Use registered anatomy, independent brains and a time-matched control."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "The supplied paper maps ethanol circuitry behaviorally; it does not provide the lab’s ex vivo ethanol/GCaMP acquisition recipe. This module extends the handbook’s general imaging method and labels saline, bath dose and acquisition choices as preparation-specific.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-withdrawal",
+      "title": "Plan a withdrawal-associated seizure-threshold experiment",
+      "summary": "A specialist adult electrophysiology module, distinct from spontaneous behavioral seizures.",
+      "category": "alcohol",
+      "module": "Specialist & developmental paradigms",
+      "time": "Acute induction, then independent day 1 / 7 / 14 tests",
+      "level": "Advanced",
+      "kind": "Planning guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "Matched adult female cohorts and mock-exposure controls",
+        "Validated source-compatible vapor induction and recovery food",
+        "Specialist electrophysiology station, approved stimulator and isolated recording setup",
+        "Micromanipulators, source-specified electrodes, DLM recording and pathway-health checks",
+        "Original electrode-placement, pulse-width and response-classification SOP"
+      ],
+      "parameters": [
+        [
+          "Published induction",
+          "15 min ethanol-saturated stream generated through 100% liquid ethanol in the source inebriator; not measured 100% ethanol gas."
+        ],
+        [
+          "Published age/sex",
+          "3–5-day-old females at the initial treatment."
+        ],
+        [
+          "Retention delays",
+          "Independent 1, 7 and 14 day groups, with age-matched mock groups."
+        ],
+        [
+          "Source electrical paradigm",
+          "1.5 s, 200 Hz electroconvulsive trains; 10 V increments with 8 min intervals are reported. Full pulse/electrode geometry and instrument validation remain essential."
+        ],
+        [
+          "Endpoint",
+          "Minimum validated stimulus producing the source-defined discharge/failure/recovery pattern."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Confirm specialist capability",
+          "action": "Use an established local electrophysiology SOP and training before adapting the source. Verify the stimulator and recording configuration without guessing missing pulse or electrode details.",
+          "why": "Voltage labels alone do not specify current delivered to tissue or recording validity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Allocate all delayed cohorts",
+          "action": "Assign ethanol versus mock treatment within genotype for independent 1, 7 and 14 day tests.",
+          "why": "A repeated test can itself alter physiology; aging must be controlled.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply the source-mapped induction",
+          "action": "Document its apparatus, saturation, duration and recovery, and confirm survival.",
+          "why": "A different ethanol rig may produce a different initial burden.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Maintain matched recovery housing",
+          "action": "Keep food, age, density and handling the same; record survival and independent clearance information.",
+          "why": "General health and residual ethanol can influence excitability.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Prepare and verify the recording",
+          "action": "Follow the original specialist mounting/electrode protocol and check evoked pathway responses before the seizure-threshold series.",
+          "why": "Absent responses from damaged tissue do not indicate a high seizure threshold.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply the validated threshold sequence",
+          "action": "Use the fully specified source/local electrical SOP, preserve the inter-stimulus interval and record the entire waveform and stimulus log.",
+          "why": "Repeated stimulation can alter the threshold if timing differs.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Score the physiological response blind",
+          "action": "Use the source discharge/failure criteria, with QC for electrode failure or deteriorating preparation.",
+          "why": "A movement twitch is not equivalent to the recorded seizure pattern.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze at each age",
+          "action": "Compare ethanol and mock histories at the same delay and report threshold, uncertainty, exclusions and survival.",
+          "why": "A common age-related change should not be assigned to withdrawal.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Mock exposure for every genotype and delay",
+        "Evoked pathway and recording-health checks",
+        "Residual ethanol and general motor/health assessment",
+        "Blinded waveform classification"
+      ],
+      "record": [
+        "Initial age and exposure",
+        "Recovery duration and survival",
+        "Electrode/stimulator SOP version",
+        "Full stimulus/response trace",
+        "Threshold and QC reason",
+        "Age-matched control identity"
+      ],
+      "expected": "A source-grounded plan for induced seizure susceptibility after ethanol history, requiring validated specialist execution.",
+      "troubleshooting": [
+        {
+          "problem": "No evoked baseline response",
+          "action": "Resolve preparation/electrode health; do not score it as resistance to seizure induction."
+        },
+        {
+          "problem": "Threshold changes in all older groups",
+          "action": "Compare age-matched mock cohorts and report the age effect separately."
+        }
+      ],
+      "sources": [
+        "withdrawal2014"
+      ],
+      "related": [
+        "ethanol-internal-levels",
+        "ethanol-recovery",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "Withdrawal-associated hyperexcitability is measured after ethanol has cleared and can coexist with a previous tolerance-producing exposure. The test asks about neural excitability, not just whether a fly appears inactive.",
+        "The source endpoint is the minimum electroconvulsive stimulus voltage that evokes a defined seizure discharge pattern recorded in a flight muscle. It is not spontaneous seizure frequency.",
+        "Age itself changes seizure susceptibility, so every retention delay needs a concurrently aged mock-exposed control."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Treat each independently prepared fly as a physiological measurement and account for shared treatment vial/day.",
+        "Describe a withdrawal-associated induced-threshold phenotype. Do not infer spontaneous seizures or equivalence to human alcohol withdrawal from this one endpoint."
+      ],
+      "modifications": [
+        {
+          "change": "Screen behavior before specialist electrophysiology.",
+          "rationale": "This can establish health and motor competence.",
+          "validation": "Do not substitute an unvalidated shaking or immobility score for the electrophysiological threshold."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Ghezzi et al., Addiction Biology 2014 (online 2012). The source uses a 15 min saturated-stream induction in 3–5-day-old females and specialist brain stimulation/DLM recording at 1, 7 or 14 days. This planning workflow requires the original electrophysiology SOP; it is not a complete substitute for electrode and stimulator validation.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-developmental",
+      "title": "Design developmental ethanol exposure and adult follow-up",
+      "summary": "Keep developmental toxicity, age at eclosion and adult-acquired tolerance separate.",
+      "category": "alcohol",
+      "module": "Specialist & developmental paradigms",
+      "time": "Development through eclosion, then age-matched adult testing",
+      "level": "Advanced",
+      "kind": "Planning guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "Synchronized egg collection and matched genetic backgrounds",
+        "Precisely counted larvae, controlled density and identical food batches",
+        "Defined ethanol-food and source-compatible maintenance of ethanol exposure",
+        "Eclosion and survival logs, adult collection/recovery system",
+        "Validated adult behavioral and internal-exposure follow-up methods"
+      ],
+      "parameters": [
+        [
+          "Source egg collection example",
+          "2–3 h synchronized collection."
+        ],
+        [
+          "Source density example",
+          "100 newly hatched larvae per vial at 24 h."
+        ],
+        [
+          "Named concentration series",
+          "0%, 5%, 10% and 12% ethanol-food conditions in the cited study; these are not universal safe/effective doses."
+        ],
+        [
+          "Dose-maintenance boundary",
+          "The source used an ethanol-bath arrangement for exposed vials and a water control; retrieve and reproduce its physical details before implementation."
+        ],
+        [
+          "Adult follow-up",
+          "Match by days after eclosion and use a defined ≥24 h anesthesia recovery, rather than matching only by days after egg laying."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose the developmental window",
+          "action": "Specify embryo/larval timing and whether exposure ends at a particular stage or continues through development.",
+          "why": "A stage-specific question cannot be answered by an unspecified continuous food treatment.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Synchronize and control density",
+          "action": "Collect a narrow egg-laying window and transfer the exact planned number of larvae into matched food.",
+          "why": "Density strongly affects nutrition, developmental time and survival.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Validate exposure maintenance",
+          "action": "Prepare the source-defined food concentration and maintenance geometry, measuring or otherwise validating ethanol retention over time.",
+          "why": "Initial liquid addition does not establish the concentration remaining days later.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run controls on the same food background",
+          "action": "Keep batch, nutrition, vessel and maintenance arrangements matched except for the intended ethanol variable.",
+          "why": "Food and bath differences can independently affect development.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Count developmental outcomes",
+          "action": "Record stage-specific survival and daily eclosion with the original denominators.",
+          "why": "Mortality and delayed eclosion are different outcomes.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Collect adults by eclosion time",
+          "action": "Form age-matched adult cohorts using the time each individual cohort emerged, and record body/sex composition.",
+          "why": "Calendar-day matching confounds developmental delay with adult age.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Allow the defined recovery",
+          "action": "Transfer to the intended ethanol-free or continued-exposure adult condition and document any collection anesthesia recovery.",
+          "why": "Continued adult exposure is a second treatment factor.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run adult behavior and kinetic checks",
+          "action": "Use the independently validated acute, recovery or intake method with suitable controls.",
+          "why": "A persistent adult phenotype can involve altered size, health or ethanol handling as well as circuitry.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze the full developmental pathway",
+          "action": "Show survival and developmental timing beside adult outcomes, and state which animals could enter the adult assay.",
+          "why": "Conditioning only on surviving adults can obscure a major exposure effect.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Density- and food-matched ethanol-free development",
+        "Dose-maintenance arrangement control",
+        "Adult ages matched after eclosion",
+        "Survival, size/health and internal ethanol follow-up"
+      ],
+      "record": [
+        "Egg collection window",
+        "Larvae/vial and food batch",
+        "Ethanol maintenance method",
+        "Stage-specific denominators",
+        "Eclosion dates",
+        "Adult age/sex and anesthesia history"
+      ],
+      "expected": "A reproducible developmental exposure design with survival, timing and later adult effects reported as separate endpoints.",
+      "troubleshooting": [
+        {
+          "problem": "Adults differ greatly in size or eclosion day",
+          "action": "Record both outcomes and match adult behavior by age after eclosion; inspect exposure maintenance and density."
+        },
+        {
+          "problem": "Only a few exposed adults survive",
+          "action": "Report the strong selection and developmental toxicity. Do not portray their adult behavior alone as a general acquired-tolerance phenotype."
+        }
+      ],
+      "sources": [
+        "development2011"
+      ],
+      "related": [
+        "ethanol-sensitivity",
+        "ethanol-internal-levels",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "Exposure during development can change survival, developmental rate, body size and later behavior. These effects are not equivalent to tolerance acquired by an already adult fly.",
+        "Comparing adults on the same calendar day after egg laying can compare different adult ages because ethanol delays eclosion. Adult behavior should therefore be matched by time after eclosion.",
+        "Survivors of a toxic developmental exposure are a selected population. Report survival together with adult behavior rather than treating survivor performance as the only outcome."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Use vial-level developmental replication, and identify how adult cohorts are nested within developmental vials.",
+        "Interpret adult outcomes conditional on survival; do not translate fly-food concentration into a human prenatal alcohol dose."
+      ],
+      "modifications": [
+        {
+          "change": "Begin with a smaller locally validated concentration range.",
+          "rationale": "Published developmental concentrations may be strongly toxic in a different food/background.",
+          "validation": "Lock the range after a separate survival/development pilot and label it an adaptation."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "McClure et al. 2011 is the named source for developmental exposure. Source examples include synchronized 2–3 h egg collections and transferring 100 newly hatched larvae per vial at 24 h into assigned ethanol food. Exact food/bath maintenance must be taken from that study’s apparatus before an executable SOP is claimed.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-paper-circuits",
+      "title": "Read the paper’s circuit experiments as testable designs",
+      "summary": "A figure-by-figure map from tolerance phenotype to neural and molecular hypothesis.",
+      "category": "alcohol",
+      "module": "Circuits & follow-up experiments",
+      "time": "Planning, genetics validation and the selected behavioral paradigm",
+      "level": "Advanced",
+      "kind": "Planning guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "The original article, figure legends, S1 strain table and S2 experiment/statistics table",
+        "Verified stocks or independent genetic reagents with background records",
+        "Matched driver-only/responding-transgene controls and a second reagent where feasible",
+        "The appropriate acute, cold-shock or chronic behavioral protocol",
+        "Anatomical/functional validation and a prespecified hypothesis"
+      ],
+      "parameters": [
+        [
+          "Fig. 1",
+          "Acute induction → 4 h or 24 h E2; cold shock separates AST-like and ART-like contributions. amn and rsh affect different components."
+        ],
+        [
+          "Figs. 2 and 5",
+          "Kenyon-cell Nmdar1, amn in γ lobes, and Rdl-related experiments distinguish AST-associated pathways from acute sensitivity and classical memory."
+        ],
+        [
+          "Fig. 3",
+          "rsh-dependent ART is not localized to the tested mushroom-body cells, whereas rsh-dependent initial sensitivity has a broader MB contribution."
+        ],
+        [
+          "Fig. 4",
+          "APL activity during acquisition supports rapid tolerance; Gad1/Tbh manipulations and cold-shock tests probe the sensitive component."
+        ],
+        [
+          "Fig. 6",
+          "Chronic tolerance is compared with CREB/protein-synthesis-related memory mechanisms; behavioral overlap with long-term memory does not establish identical storage."
+        ],
+        [
+          "Figs. 7–9",
+          "DPM activity during the 48 h exposure and DPM GABA / αβ Kenyon-cell Rdl support chronic tolerance. Temporal activity, synthesis-related and receptor tests are distinct manipulations."
+        ],
+        [
+          "Fig. 10",
+          "Sirt1 loss reveals an extra chronic-history contribution that is cold-sensitive early and resistant later; its persistence is tested separately."
+        ],
+        [
+          "Fig. 11",
+          "A summary of the tested pathways, not a complete map of all ethanol-sensitive brain regions."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Choose one figure-level hypothesis",
+          "action": "For example: does a candidate influence the cold-sensitive component at 4 h, the cold-resistant response at 24 h, or the 48 h chronic-history effect?",
+          "why": "A single ST50 assay cannot identify all three processes.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Translate the hypothesis into histories and windows",
+          "action": "Select the matching protocol and define E1, shock, retention and E2 clocks before choosing genetic reagents.",
+          "why": "The same transgene can affect different biological phases in different schedules.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Check reagent and stock identities",
+          "action": "Use original strain information and current stock records, document background and full genotype, and verify the actual driver pattern.",
+          "why": "Lab shorthand and a driver label do not establish expression specificity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Plan independent genetic evidence",
+          "action": "Use appropriate controls, an independent RNAi/allele where suitable, and a rescue design if the claim requires gene specificity.",
+          "why": "Off-target, background and expression-dose effects can mimic a gene-specific result.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Separate developmental and adult hypotheses",
+          "action": "Use a validated adult-specific expression design when distinguishing developmental motor sensitivity from an adult requirement. Determine the actual expression kinetics.",
+          "why": "A constitutive phenotype may be established before adult alcohol exposure.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pair every tolerance measurement with sensitivity",
+          "action": "Retain E1 or naive-challenge ST50 and baseline motor data, not only a derived tolerance number.",
+          "why": "The source explicitly identifies overlapping and separable sensitivity/tolerance effects.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Add operational fractionation before mechanistic naming",
+          "action": "Use shock/sham and the proper retention delay when calling a phenotype AST-like or ART-like.",
+          "why": "A mutation at four hours does not by itself identify AST.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Validate localization with convergent methods",
+          "action": "Consider another driver, a subtractive pattern or independent anatomy, and test both relevant genetic controls under the same schedule.",
+          "why": "A broad expression pattern can include the actual causal cells outside the named region.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Interpret negative evidence with its limits",
+          "action": "Report validation, precision and the tested cell/time range. Treat a nonsignificant effect as limited evidence rather than proof that a pathway never contributes.",
+          "why": "Incomplete perturbation and insufficient power can produce false negative localization.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Keep the conclusion at the measured level",
+          "action": "State the paradigm, endpoint, phase, genotype and controlled contrast that support the inference. Use “consistent with” when connecting behavior to a storage mechanism.",
+          "why": "The strongest interpretation is the one the design actually distinguishes.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Matched background and both single-transgene controls",
+        "Independent genetic reagent or rescue when testing specificity",
+        "Anatomical and functional validation",
+        "Initial sensitivity, motor competence and survival",
+        "Cold-shock and temperature controls as appropriate"
+      ],
+      "record": [
+        "Figure-level hypothesis",
+        "Full genotype and source stock IDs",
+        "Driver validation",
+        "Adult/developmental timing",
+        "Behavioral history and phase",
+        "Sensitivity plus tolerance",
+        "All planned comparisons"
+      ],
+      "expected": "A practical path from the paper to a controlled follow-up hypothesis, with correct separation of phenotype, phase, localization and mechanism.",
+      "troubleshooting": [
+        {
+          "problem": "A candidate affects E1 as well as ΔST50",
+          "action": "Report both and add matched challenge-history, kinetics and dose-design checks before calling a tolerance-specific gene."
+        },
+        {
+          "problem": "Only one broad driver gives an effect",
+          "action": "Seek independent localization or a subtractive control rather than assigning the phenotype to every labeled neuron."
+        }
+      ],
+      "sources": [
+        "larnerd2025",
+        "rapid"
+      ],
+      "related": [
+        "ethanol-circuit-timing",
+        "ethanol-cold-shock",
+        "ethanol-cross-paradigm",
+        "ethanol-study-design"
+      ],
+      "rationale": [
+        "The paper asks whether ethanol-created memory-like states use the same machinery as classical associative memory. Behavioral and anatomical overlap is partial; a shared gene does not make the memories identical.",
+        "Initial sensitivity, induction of tolerance, persistence, cold resistance and final motor expression are separable outcomes. A gene can affect more than one of them.",
+        "Circuit claims are supported by combinations of temporal perturbation, spatial drivers, subtraction, gene manipulation and relevant controls. A single broad driver result is not a sufficient cell-type assignment."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "The source interprets a genetic effect only when the experimental group differs from each relevant control. Preserve the rationale for those comparisons and account for planned multiplicity.",
+        "Do not assume classical ASM = AST, ARM = ART or associative LTM = chronic tolerance; the paper explicitly tests similarities and differences."
+      ],
+      "modifications": [
+        {
+          "change": "Apply the same phase-specific design to an alcohol candidate line.",
+          "rationale": "It asks a novel gene/circuit question while retaining a known behavioral contrast.",
+          "validation": "Validate the candidate’s baseline sensitivity, expression, background and internal exposure before interpreting plasticity."
+        },
+        {
+          "change": "Use an independently validated perturbation suited to the facility.",
+          "rationale": "Different genetic tools can test related hypotheses with different temporal properties.",
+          "validation": "Do not claim mechanistic equivalence between activity, transcriptional and protein-synthesis perturbations."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2025, Figs. 1–11 and Methods. This is a mechanism/planning companion, not a claim that every genetic manipulation has an identical executable recipe. Stock identities belong to the paper’s S1 Table; experiment-specific n and statistics are in S2 Table.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-cross-paradigm",
+      "title": "Test interactions between chronic, repeated and rapid histories",
+      "summary": "A design for cross-tolerance, reduced headroom and experience-dependent preference.",
+      "category": "alcohol",
+      "module": "Tolerance & memory-like states",
+      "time": "Selected prior history + common acute challenge series",
+      "level": "Advanced",
+      "kind": "Planning guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "Independent cohorts for each prior history and its age-matched air control",
+        "The validated induction protocols and common final challenge",
+        "Separate cohorts for preference, internal-ethanol or imaging follow-up",
+        "A full event calendar and factorial sample allocation"
+      ],
+      "parameters": [
+        [
+          "Prior history",
+          "Choose one fully specified continuous or repeated protocol plus its air-history control."
+        ],
+        [
+          "Added acute induction",
+          "A fixed source-mapped acute induction or matched air handling."
+        ],
+        [
+          "Final challenge",
+          "One common ethanol challenge after the locked post-acute interval."
+        ],
+        [
+          "Primary contrast",
+          "Effect of added acute induction within each prior history, then their interaction."
+        ],
+        [
+          "Separate follow-up",
+          "Preference and internal-level assays use independent cohorts unless the extra challenge is intentionally part of the question."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "Lock the complete history calendar",
+          "action": "Record every exposure and rest interval from adult collection through the final challenge.",
+          "why": "Unrecorded extra doses can change the state being tested.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Allocate the four history cells",
+          "action": "Cross prior air/ethanol history with added acute air/ethanol induction, within each genotype and batch.",
+          "why": "The interaction cannot be identified by comparing only two differently aged groups.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Pilot challenge headroom",
+          "action": "Check that the common challenge produces interpretable curves in all prior histories without forcing every genotype to full immobility.",
+          "why": "A ceiling or unreached median can artificially compress a second tolerance increment.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Deliver the prior histories",
+          "action": "Run the chosen continuous or repeated protocol and its matched air trajectory, retaining survival and housing records.",
+          "why": "Age, stress and cumulative exposure are part of the prior-history comparison.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply added acute or sham induction",
+          "action": "Keep its timing, delivered dose and handling fixed across the prior histories, with source-compatible sensitivity measurements where appropriate.",
+          "why": "Changing the acute dose to rescue a desired increment tests a new question.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Recover and challenge consistently",
+          "action": "Use the explicit post-acute clock and the same endpoint/dose in every final challenge.",
+          "why": "The final measurement must be comparable across the factorial cells.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Measure kinetics and behavior separately",
+          "action": "Use independent samples to check internal burden/clearance and baseline motor state in the histories that differ.",
+          "why": "A history interaction can involve altered dose handling as well as neural plasticity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Analyze the interaction and raw medians",
+          "action": "Estimate the added-acute history effect under each prior history and their difference, alongside raw challenge ST50 and censoring.",
+          "why": "A smaller arithmetic E2−E1 alone can reflect a shifted baseline.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Test preference with unchallenged parallel cohorts",
+          "action": "If linking resistance and valence, run CAFE/FRAPPÉ on cohorts that did not receive the extra challenge unless that extra history is intended.",
+          "why": "Repeated history can produce different valence from continuous history.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "All four prior-history × acute-history cells",
+        "Age- and handling-matched air trajectories",
+        "Kinetics, survival and baseline movement",
+        "Separate preference cohorts"
+      ],
+      "record": [
+        "Complete event calendar",
+        "Each history and sham procedure",
+        "Raw acute/challenge curves",
+        "Internal-level sampling",
+        "Survival",
+        "Interaction and its uncertainty"
+      ],
+      "expected": "A controlled test of how one ethanol history changes the response to another, without assuming that all resistance shifts are the same form of tolerance.",
+      "troubleshooting": [
+        {
+          "problem": "Prior-history groups do not reach ST50 during the final challenge",
+          "action": "Preserve censoring and reassess the challenge range in a new pilot; do not manufacture deltas from the cutoff."
+        },
+        {
+          "problem": "Preference reverses while tolerance increases",
+          "action": "Keep the assays separate and consider the published dissociation between repeated and continuous histories rather than treating the result as an error."
+        }
+      ],
+      "sources": [
+        "rapid",
+        "larnerd2025",
+        "toleranceconfound"
+      ],
+      "related": [
+        "ethanol-chronic-tolerance",
+        "ethanol-repeated-published",
+        "rapid-tolerance",
+        "ethanol-cafe-preference"
+      ],
+      "rationale": [
+        "A preexisting resistant state can reduce the apparent size of a second tolerance increment simply because the assay has less dynamic range. That is not automatically a failure to learn from another dose.",
+        "Prior chronic, prior repeated and naive histories also differ in age and cumulative dose. Each combined experiment needs its own matched air-history trajectory.",
+        "A tolerance challenge itself is another ethanol exposure. Intake or imaging measured afterward does not reflect the unchallenged original history."
+      ],
+      "groups": [
+        [
+          "Air prior history / air acute",
+          "Neither ethanol history",
+          "Final challenge reference"
+        ],
+        [
+          "Air prior history / ethanol acute",
+          "Acute history only",
+          "Reference rapid effect"
+        ],
+        [
+          "Chronic or repeated prior / air acute",
+          "Prior history only",
+          "Persistent prior-history effect"
+        ],
+        [
+          "Chronic or repeated prior / ethanol acute",
+          "Both histories",
+          "Interaction/metaplasticity test"
+        ]
+      ],
+      "timeline": [],
+      "analysis": [
+        "An editorial interaction estimate is (challengeEtOHprior,acuteEtOH − challengeEtOHprior,acuteAir) − (challengeAirprior,acuteEtOH − challengeAirprior,acuteAir). Use the model appropriate to the design and batch structure.",
+        "Explore dose–response and kinetic alternatives before calling a reduced increment mechanistic suppression of memory formation."
+      ],
+      "modifications": [
+        {
+          "change": "Add factorial sham histories to a paired challenge design.",
+          "rationale": "This separates inherited prior resistance from the effect of another acute episode.",
+          "validation": "Verify all cells have comparable age and measurement range."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "Larnerd 2023 reports that continuous and repeated histories alter later rapid-tolerance development, with differing consumption valence. The factorial design here is an editorial extension for separating history effects; exact combined timing/doses must be declared and piloted.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
+    },
+    {
+      "slug": "ethanol-study-design",
+      "title": "Design, record and analyze an alcohol experiment",
+      "summary": "A complete decision and reporting checklist before collecting the main dataset.",
+      "category": "alcohol",
+      "module": "Design & analysis",
+      "time": "Before the pilot, then locked before the main study",
+      "level": "Intermediate",
+      "kind": "Analysis guide",
+      "checked": "2026-11-18",
+      "materials": [
+        "A written hypothesis and sample-allocation plan",
+        "Chosen source protocol and versioned local modifications",
+        "Blank exposure, count, survival and analysis sheets",
+        "Randomization/blinding codes and a data dictionary",
+        "Pilot estimates for effect size, variability, attrition and observation range"
+      ],
+      "parameters": [
+        [
+          "Primary outcome",
+          "Name endpoint and estimator: e.g. ST50-LoRR, paired rapid ΔST50, history-challenge difference, recovery R50 or evaporation-corrected PI."
+        ],
+        [
+          "Experimental unit",
+          "Usually an independently treated vial/group for vapor or grouped CAFE; a brain for imaging, with repeated ROIs modeled appropriately."
+        ],
+        [
+          "Sample size",
+          "Choose from a justified precision/power plan and independent-day replication. The 2025 chronic n = 15–20 groups is a source report, not a rule for every assay."
+        ],
+        [
+          "Covariates/blocking",
+          "Age, sex, background, parental cross, food batch, day, clock phase, chamber/channel and experimenter where relevant."
+        ],
+        [
+          "Missing endpoint",
+          "ST50 not reached at the fixed cutoff is not the cutoff value. Retain the raw curve and censoring status."
+        ],
+        [
+          "Illustration only",
+          "40% at 18 min and 60% at 20 min gives ST50 = 19 min. This is arithmetic, not experimental data."
+        ]
+      ],
+      "steps": [
+        {
+          "title": "State one primary question",
+          "action": "Specify sensitivity, a defined tolerance history, intake, learned cue choice, withdrawal excitability or a causal circuit phase. Name primary and secondary outcomes.",
+          "why": "Multiple phenotypes should not be conflated into one alcohol-resistance score.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Choose the source and declare gaps",
+          "action": "List the published numerical settings and the local decisions required for the actual apparatus. Mark any missing age, flow, transition or challenge detail.",
+          "why": "Transparent uncertainty is more reproducible than invented completeness.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Choose the induction estimand",
+          "action": "Commit to fixed external exposure or a justified response-scaled design. If both are necessary, plan separate complementary experiments.",
+          "why": "Sensitivity and accumulated dose can confound apparent tolerance.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Allocate independent units",
+          "action": "Build the genotype × history × perturbation cells with appropriate genetic/air controls and independent cross/day batches.",
+          "why": "Many flies in one vial do not replace independent treatment units.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Run a separate pilot",
+          "action": "Use it to choose dose range, cutoffs, sampling grid, optical or chemical calibration and acceptable health criteria. Lock these before the main cohort.",
+          "why": "Optimizing on the same data used for the final hypothesis inflates apparent effects.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Randomize and blind",
+          "action": "Balance channel, testing order and sample processing; hide genotype/history from the scorer or analyst where feasible. Keep the code key separately.",
+          "why": "Apparatus position and expectations can bias both delivery and judgment.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Collect raw counts and full metadata",
+          "action": "Keep timestamps, actual N, both endpoints if planned, dose log, survival and all deviations. Store immutable raw movies/measurements separately from derived sheets.",
+          "why": "A summary bar without a denominator cannot be audited.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Apply prospective QC",
+          "action": "Use the locked apparatus-failure, health and quantification rules consistently. Report exclusion counts and reasons by group.",
+          "why": "Outcome-based exclusions select a desired phenotype.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Compute the declared estimator",
+          "action": "Interpolate only inside observed 50% brackets; link paired rapid values; use matched challenge-history values for chronic/repeated comparisons; blank-correct intake before PI.",
+          "why": "The formula must match the paradigm.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Use a design-matched model",
+          "action": "Account for repeated times within vial, repeated days within a CAFE chamber and shared batch/plate structure. Test planned interactions when the question concerns history-dependent genotype effects.",
+          "why": "An interaction claim needs an interaction comparison, not one significant group and one nonsignificant group.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Report effect and uncertainty",
+          "action": "Show raw replicate values, curves, confidence intervals, attrition and sensitivity analyses as appropriate. Distinguish statistical evidence from mechanism.",
+          "why": "A star annotation alone does not explain size, precision or biological specificity.",
+          "origin": "Editorial instruction"
+        },
+        {
+          "title": "Publish the versioned method",
+          "action": "Record the exact source, all deviations and validation, plus a data dictionary and analysis formula. Keep a blank template for the next repeat.",
+          "why": "A handbook becomes useful when the next person can reproduce the decisions as well as the steps.",
+          "origin": "Editorial instruction"
+        }
+      ],
+      "controls": [
+        "Matched genetic and handling controls",
+        "History controls for every challenge age",
+        "Kinetic and motor checks for mechanistic interpretation",
+        "Independent days/crosses and blinded scoring"
+      ],
+      "record": [
+        "Hypothesis and primary outcome",
+        "Power/precision rationale",
+        "Source versus adaptation",
+        "Randomization/blinding",
+        "Dose/clock/endpoints",
+        "Raw and derived data",
+        "QC/exclusions",
+        "Analysis code/version"
+      ],
+      "expected": "A scientifically interpretable alcohol study with a traceable source, explicit local adaptations, honest replication and an analysis matched to the actual question.",
+      "troubleshooting": [
+        {
+          "problem": "One group is significant and another is not",
+          "action": "That does not establish a difference between effects. Test the planned interaction or direct contrast."
+        },
+        {
+          "problem": "The proposed sample size counts flies, frames or technical wells",
+          "action": "Reidentify the independently treated unit and account for nesting; revise the precision plan around biological units."
+        },
+        {
+          "problem": "A stronger exposure is introduced during the main experiment",
+          "action": "Document the deviation, separate regimens in analysis and validate the revised method in a new cohort."
+        }
+      ],
+      "sources": [
+        "larnerd2025",
+        "rapid",
+        "toleranceconfound",
+        "flybar"
+      ],
+      "related": [
+        "ethanol-delivery",
+        "st50-analysis",
+        "experimental-design",
+        "ethanol-cross-paradigm"
+      ],
+      "rationale": [
+        "A valid alcohol experiment needs a question, a dose definition, an endpoint, a clock and an experimental unit. Without those, a precise-looking ST50 can be scientifically ambiguous.",
+        "The same fixed external induction across genotypes asks about response to the same environmental regimen. Response-scaled induction, such as the 1.5×ST50 design examined in the linked genetic study, asks about a different, standardized response burden. Neither should be substituted after seeing the main results.",
+        "Biological replication comes from independent exposure units and repeated cohorts/days. Flies sharing a vapor vial, repeated score times and technical assay wells are not interchangeable sources of n."
+      ],
+      "groups": [],
+      "timeline": [],
+      "analysis": [
+        "Acute ST50: interpolate t1 + (50−p1)(t2−t1)/(p2−p1) only for a valid adjacent bracket. Do not pool all vials into one average curve before estimating biological replicate variation.",
+        "Rapid paired tolerance: ΔST50 = E2−E1. Percentage paired change = 100(E2−E1)/E1 is a different scale and can be unstable for very small E1. Show E1 and E2 as well.",
+        "Chronic/repeated history effect: challengeST50,preexposed − challengeST50,air-history, with a common challenge and matched age/day. A percentage version divides by the air-history challenge value and must be named.",
+        "For the two behavioral endpoints, treat paired within-vial measurements as correlated. Keep endpoint definitions fixed and handle multiple planned claims explicitly.",
+        "If event-time analysis is used, document whether individual flies are tracked and how reversible/transient LoRR is treated. Group proportions are not automatically a set of independent irreversible event times.",
+        "Use diagnostics and the intended estimand to choose robust/parametric/nonparametric analyses. Do not copy a source’s statistical test only because a software button is available."
+      ],
+      "modifications": [
+        {
+          "change": "Add matched air-history challenge controls to a published paired protocol.",
+          "rationale": "This strengthens interpretation when initial sensitivity or daily drift differs.",
+          "validation": "Keep the source estimator too, label both, and plan the primary contrast before unblinding."
+        },
+        {
+          "change": "Use a finer score grid only in a pilot-defined window.",
+          "rationale": "This improves temporal resolution while limiting extra handling.",
+          "validation": "Validate disturbance effects and use the same grid in every compared group."
+        },
+        {
+          "change": "Collect internal-level and motor cohorts in parallel.",
+          "rationale": "This tests pharmacokinetic and performance alternatives to neural tolerance.",
+          "validation": "Use independent units and exactly matched exposure/collection clocks."
+        }
+      ],
+      "quality": [
+        "Label every independent exposure vial with genotype, cross/batch, sex, age, history, rig channel and test date. Randomize channel and scoring order within a day.",
+        "Prespecify endpoint, maximum exposure, exclusion criteria and the experimental unit before unblinding. Keep raw counts and all deviations, including mortality.",
+        "Check airflow, bottle temperature, liquid stock concentration, leaks and timestamps before each run. Test matched controls in the same session."
+      ],
+      "sourceNote": "This is an editorial analysis companion informed by the linked primary experiments. It does not prescribe a universal n, a single mandatory statistical test, or a guarantee that a local schedule induces tolerance.",
+      "tags": [
+        "ethanol",
+        "alcohol"
+      ]
     }
   ],
   "glossary": [
@@ -3235,6 +7350,208 @@ window.FLYBENCH_DATA = {
     {
       "term": "Blank",
       "definition": "A control carried through a process without the intended biological input."
+    },
+    {
+      "term": "AST",
+      "definition": "Anesthesia-sensitive tolerance: the operational contribution to ethanol tolerance disrupted by a specified amnestic cold-shock intervention; a four-hour total response is not automatically pure AST."
+    },
+    {
+      "term": "ART",
+      "definition": "Anesthesia-resistant tolerance: the tolerance contribution that remains under the specified cold-shock test; in Larnerd 2025 the later 24-hour acute-history response is cold resistant."
+    },
+    {
+      "term": "Nominal vapor setting",
+      "definition": "An apparatus-specific ethanol-delivery designation. It must not be confused with liquid stock % or a directly measured gas-phase % v/v."
+    },
+    {
+      "term": "Onset-to-onset interval",
+      "definition": "Time from the start of E1 to the start of E2. In the 2025 four-hour schedule, 30 min E1 plus 3.5 h rest gives a four-hour onset-to-onset interval."
+    },
+    {
+      "term": "Cessation-to-onset interval",
+      "definition": "Time from the end of an exposure to the start of the next challenge. Name it explicitly rather than using an ambiguous “four-hour interval”."
+    },
+    {
+      "term": "Acquisition",
+      "definition": "The induction phase when an ethanol experience and a concurrent perturbation may establish a later change."
+    },
+    {
+      "term": "Expression phase",
+      "definition": "The final test when a learned or adapted state affects observable behavior; a motor-performance effect at this phase can mimic a memory effect."
+    },
+    {
+      "term": "Pharmacokinetic explanation",
+      "definition": "A behavioral difference associated with altered absorption, distribution or clearance of ethanol rather than necessarily a changed neural response at equal internal dose."
+    },
+    {
+      "term": "Pharmacodynamic explanation",
+      "definition": "A changed biological response at a given internal drug exposure; behavioral data alone rarely exclude pharmacokinetic alternatives."
+    },
+    {
+      "term": "CPI",
+      "definition": "Conditioned preference index: a cue-choice summary, commonly the average of reciprocal odor-training group preference indexes; it is distinct from consumption PI."
+    },
+    {
+      "term": "Exposure-history control",
+      "definition": "An age- and handling-matched cohort with a specified prior treatment, such as humidified air, given the same final ethanol challenge."
+    },
+    {
+      "term": "Right censoring",
+      "definition": "An event or endpoint has not been observed by the end of observation. The cutoff is a bound, not an invented observed time."
+    },
+    {
+      "term": "FRAPPÉ",
+      "definition": "Fluorometric reading assay of preference primed by ethanol: a short, individual fluorescent intake assay after a defined priming and food-deprivation history."
     }
-  ]
+  ],
+  "alcohol": {
+    "intro": "A source-linked alcohol handbook: choose the biological question, keep the exposure and endpoint explicit, and record every adaptation.",
+    "coreSource": "larnerd2025",
+    "scope": "The core pages cover the acute, 4 h/24 h rapid, AST/ART cold-shock, 48 h continuous chronic and circuit-timing paradigms in the supplied Larnerd 2025 paper. Named published repeated-bout, intake, cue-memory, recovery, kinetic and specialist paradigms extend the collection. This is a defined curated coverage map, not a claim to contain every alcohol method ever published.",
+    "families": [
+      "Exposure & endpoints",
+      "Tolerance & memory-like states",
+      "Intake, preference & reward",
+      "Circuits & follow-up experiments",
+      "Specialist & developmental paradigms",
+      "Design & analysis"
+    ],
+    "comparison": [
+      [
+        "Acute sensitivity",
+        "One controlled exposure",
+        "ST50-LoRR; immobility separately",
+        "Same external setting + genetic/air controls",
+        "ethanol-sensitivity"
+      ],
+      [
+        "4 h rapid tolerance",
+        "30 min E1 + 3.5 h rest in the 2025 standard schedule",
+        "Paired E2−E1; mixed AST/ART contribution",
+        "Same endpoint; extra air-history challenge helps",
+        "rapid-tolerance"
+      ],
+      [
+        "24 h rapid / ART-like",
+        "30 min E1 + 23.5 h rest",
+        "Later tolerance; cold resistance tested explicitly",
+        "Separate delay cohort; sham/cold controls",
+        "ethanol-art-24h"
+      ],
+      [
+        "AST fractionation",
+        "Cold/sham crossed with prior ethanol/air",
+        "History × cold effect",
+        "4°C, 3 min; exact shock clock",
+        "ethanol-cold-shock"
+      ],
+      [
+        "Continuous chronic",
+        "48 h nominal 16%, then 24–72 h rest",
+        "Preexposed − air-history challenge ST50",
+        "Same age and common challenge",
+        "ethanol-chronic-tolerance"
+      ],
+      [
+        "Published repeated bouts",
+        "20 min nominal 42% daily × 4, then 24 h",
+        "Final history-dependent challenge shift",
+        "Four-day matched air history",
+        "ethanol-repeated-published"
+      ],
+      [
+        "Local three-bout template",
+        "10 min daily × 3; day-4 challenge",
+        "Final LoRR / immobility separately",
+        "Dose and effect require local validation",
+        "repeated-tolerance"
+      ],
+      [
+        "Voluntary intake",
+        "CAFE overnight or declared daily series",
+        "Corrected volume and PI",
+        "Solution-specific evaporation and total intake",
+        "ethanol-cafe-preference"
+      ],
+      [
+        "Cue-associated memory",
+        "Reciprocal odor/ethanol training; delayed drug-free test",
+        "CPI at 30 min or 24 h",
+        "Innate odor and unpaired timing controls",
+        "ethanol-conditioned-reward"
+      ]
+    ],
+    "paperMap": [
+      [
+        "Fig. 1",
+        "AST/ART separation",
+        "Acute E1/E2 and timed cold-shock tests",
+        "ethanol-cold-shock"
+      ],
+      [
+        "Figs. 2–3, 5",
+        "Genes and mushroom-body contributions",
+        "Gene/cell specificity with acute sensitivity retained",
+        "ethanol-paper-circuits"
+      ],
+      [
+        "Fig. 4",
+        "APL activity and rapid acquisition",
+        "18°C/29°C Shibirets phase schedules",
+        "ethanol-circuit-timing"
+      ],
+      [
+        "Figs. 6–9",
+        "Chronic-history pathways and DPM function",
+        "48 h exposure, retention and phase-specific perturbations",
+        "ethanol-chronic-tolerance"
+      ],
+      [
+        "Fig. 10",
+        "Sirt1 and an extra labile chronic-history contribution",
+        "Early versus late cold shock and persistence tests",
+        "ethanol-paper-circuits"
+      ],
+      [
+        "Fig. 11",
+        "Comparative circuit model",
+        "A map of tested pathways, not all possible ethanol circuits",
+        "ethanol-paper-circuits"
+      ]
+    ],
+    "clockExample": [
+      [
+        "09:00–09:30",
+        "E1",
+        "Standard 30 min acute induction"
+      ],
+      [
+        "10:00–10:03",
+        "Early cold shock, if assigned",
+        "30 min after E1 cessation"
+      ],
+      [
+        "12:30–12:33",
+        "Late shock alternative, if assigned",
+        "30 min before a 13:00 E2"
+      ],
+      [
+        "13:00",
+        "E2 for the 4 h schedule",
+        "4 h from E1 onset; 3.5 h after E1 cessation"
+      ]
+    ],
+    "furtherReading": [
+      [
+        "Abstinence/re-exposure and punishment-resistant intake",
+        "The Devineni & Heberlein consumption study includes additional addiction-like behavior designs. Their bitter-additive and abstinence histories require their own sensory, intake and survival controls; this edition does not supply a validated local concentration series for punishment.",
+        "devenini2009"
+      ],
+      [
+        "Alternative delivery platforms",
+        "Vertical inebriometers measure loss of postural control/fall-related outcomes; horizontal FlyBar vials and video activity chambers have different geometry and endpoints. Do not equate their nominal flow settings or latency measures.",
+        "flybar"
+      ]
+    ]
+  }
 };

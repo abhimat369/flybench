@@ -1,0 +1,1 @@
+session_date,vial_id,genotype,history,phase,time_min_from_phase_start,actual_datetime,N_initial,N_assessed,N_LoRR,N_complete_immobility,N_recovered_righting,N_dead,N_missing_or_occluded,endpoint_definition,righting_response_window_s,stimulus_description,scorer_code,video_id,QC_flag

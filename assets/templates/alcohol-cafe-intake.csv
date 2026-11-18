@@ -1,0 +1,1 @@
+session_date,chamber_id,genotype,history,capillary_id,solution_ethanol_percent_v_v,food_recipe_id,position,start_volume_uL,end_volume_uL,matched_empty_chamber_loss_uL,corrected_intake_uL,duration_h,N_initial,N_alive_end,temperature_C,humidity_percent,QC_flag
